@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zelo Tecnologia · Manutenção e sustentação de sistemas com SLA</title>
+  <meta name="description" content="Manutenção corretiva, preventiva e evolutiva de sistemas web, apps e servidores — inclusive sistemas feitos por outras empresas. SLA em contrato e diagnóstico técnico gratuito.">
+  <!-- Página de demonstração com empresa fictícia: remova o noindex ao usar com uma empresa real. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0F766E">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Zelo Tecnologia · Manutenção de sistemas com SLA">
+  <meta property="og:description" content="Seu sistema estável, seguro e sempre evoluindo — mesmo que tenha sido feito por outra empresa.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230F766E'/%3E%3Cpath d='M6 17h5l2.5-6 3.5 10 2.5-6H26' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&display=swap">
+  <link rel="stylesheet" href="../../assets/shared/base.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Ativa o modo com JS antes da primeira pintura; se lp.js não carregar, volta ao modo sem JS.
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.lpReady) document.documentElement.classList.remove('js'); }, 3000);
+  </script>
+  <script src="../../assets/shared/lp.js" defer></script>
+</head>
+<body data-whatsapp="5511900000000">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22"/><path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3 3 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
+    <symbol id="i-user-x" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m17 8 5 5"/><path d="m22 8-5 5"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></symbol>
+    <symbol id="i-archive" viewBox="0 0 24 24"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.16 11.9c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 6.98 2.9 9.83 9.83 0 0 1 2.9 6.99c-.01 5.45-4.44 9.88-9.89 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.42"/></symbol>
+  </svg>
+
+  <aside class="topbar" aria-label="Atendimento emergencial">
+    <div class="container topbar__inner">
+      <p><span class="topbar__dot" aria-hidden="true"></span>Sistema fora do ar agora?</p>
+      <a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Estou%20com%20um%20sistema%20fora%20do%20ar%20e%20preciso%20de%20atendimento%20emergencial." target="_blank" rel="noopener" data-track="barra-emergencia">Atendimento emergencial: (11) 90000-0000</a>
+    </div>
+  </aside>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="brand" href="#topo" aria-label="Zelo Tecnologia — início">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9"/>
+          <path d="M6 17h5l2.5-6 3.5 10 2.5-6H26"/>
+        </svg>
+        <span class="brand__name">zelo<span>tecnologia</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu" data-nav-toggle>
+        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+
+      <nav class="site-nav" id="menu" aria-label="Principal" data-nav>
+        <ul role="list">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="#diagnostico">Diagnóstico gratuito</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="hero" id="topo">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="badge"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Sustentação de sistemas com SLA em contrato</p>
+          <h1>Manutenção de sistemas sem sustos: seu software <mark>estável, seguro e sempre evoluindo.</mark></h1>
+          <p class="hero__lead">Assumimos a manutenção do seu sistema — mesmo que ele tenha sido feito por outra empresa. Corrigimos bugs, atualizamos versões, cuidamos dos servidores e entregamos melhorias com tempo de resposta garantido em contrato.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#diagnostico">Quero um diagnóstico gratuito <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--ghost" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Zelo%20Tecnologia%20e%20preciso%20de%20ajuda%20com%20a%20manuten%C3%A7%C3%A3o%20de%20um%20sistema." target="_blank" rel="noopener" data-track="hero">
+              <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg> Falar com um técnico
+            </a>
+          </div>
+          <p class="hero__note">Diagnóstico técnico sem custo · Resposta em até 1 dia útil · PHP, .NET, Java, Node.js, Python, Delphi e mais</p>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="status-card">
+            <div class="status-card__head">
+              <div>
+                <p class="status-card__app">ERP Comercial</p>
+                <p class="status-card__env">produção · monitorado pela Zelo</p>
+              </div>
+              <span class="pill pill--ok"><i></i>Operacional</span>
+            </div>
+            <div class="uptime">
+              <p class="uptime__label"><span>Disponibilidade nos últimos 90 dias</span><strong>99,98%</strong></p>
+              <div class="uptime__bars">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="is-warn"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+            <ul class="feed" role="list">
+              <li>
+                <span class="feed__icon"><svg class="icon"><use href="#i-check"/></svg></span>
+                <p><strong>Bug no cálculo de frete corrigido</strong><span>há 2h · dentro do SLA de 4h</span></p>
+              </li>
+              <li>
+                <span class="feed__icon"><svg class="icon"><use href="#i-check"/></svg></span>
+                <p><strong>PHP 7.4 → 8.3 atualizado</strong><span>ontem · sem indisponibilidade</span></p>
+              </li>
+              <li>
+                <span class="feed__icon"><svg class="icon"><use href="#i-check"/></svg></span>
+                <p><strong>Backup diário verificado</strong><span>hoje, 03:00 · restauração testada</span></p>
+              </li>
+              <li class="is-progress">
+                <span class="feed__icon"><svg class="icon"><use href="#i-pulse"/></svg></span>
+                <p><strong>Nova tela de relatórios</strong><span>em homologação · sprint 14</span></p>
+              </li>
+            </ul>
+          </div>
+          <div class="float-chip float-chip--time">
+            <span>Tempo médio de resposta</span>
+            <strong>47 min</strong>
+          </div>
+          <div class="float-chip float-chip--sla">
+            <svg class="icon"><use href="#i-shield"/></svg>
+            <span><strong>SLA cumprido</strong> 98,7% dos chamados</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Números -->
+    <section class="numbers" aria-label="Números da Zelo">
+      <div class="container">
+        <dl class="numbers__grid">
+          <div><dt>tempo médio de primeira resposta</dt><dd><span data-count="47">47</span> min</dd></div>
+          <div><dt>sistemas sob nossos cuidados</dt><dd data-count="60" data-prefix="+">+60</dd></div>
+          <div><dt>de disponibilidade média</dt><dd data-count="99.9" data-decimals="1" data-suffix="%">99,9%</dd></div>
+          <div><dt>linguagens e frameworks</dt><dd data-count="20" data-suffix="+">20+</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Sinais -->
+    <section class="section" id="sinais" aria-labelledby="signs-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Sinais de alerta</p>
+          <h2 id="signs-title">Seu sistema está pedindo socorro?</h2>
+          <p>Estes são os problemas mais comuns que encontramos quando uma empresa nos procura. Quanto antes tratados, mais barato fica.</p>
+        </header>
+        <ul class="signs" role="list">
+          <li data-reveal>
+            <span class="signs__icon"><svg class="icon" aria-hidden="true"><use href="#i-hourglass"/></svg></span>
+            <h3>Lentidão que piora a cada mês</h3>
+            <p>Telas que demoram, relatórios que travam e clientes reclamando da experiência.</p>
+          </li>
+          <li data-reveal style="--delay: .06s">
+            <span class="signs__icon"><svg class="icon" aria-hidden="true"><use href="#i-bug"/></svg></span>
+            <h3>Bugs que sempre voltam</h3>
+            <p>Corrige aqui, quebra ali. Sem testes, cada ajuste vira uma aposta.</p>
+          </li>
+          <li data-reveal style="--delay: .12s">
+            <span class="signs__icon"><svg class="icon" aria-hidden="true"><use href="#i-user-x"/></svg></span>
+            <h3>O fornecedor sumiu</h3>
+            <p>Quem desenvolveu não atende mais, e ninguém sabe como o sistema funciona por dentro.</p>
+          </li>
+          <li data-reveal>
+            <span class="signs__icon"><svg class="icon" aria-hidden="true"><use href="#i-history"/></svg></span>
+            <h3>Tecnologia desatualizada</h3>
+            <p>Versões antigas de PHP, .NET ou bibliotecas sem suporte, abrindo brechas de segurança.</p>
+          </li>
+          <li data-reveal style="--delay: .06s">
+            <span class="signs__icon"><svg class="icon" aria-hidden="true"><use href="#i-archive"/></svg></span>
+            <h3>Backup que ninguém testou</h3>
+            <p>Se o servidor parar hoje, quanto tempo — e quantos dados — sua empresa perderia?</p>
+          </li>
+          <li data-reveal style="--delay: .12s">
+            <span class="signs__icon"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span>
+            <h3>Zero documentação</h3>
+            <p>Todo o conhecimento está na cabeça de uma pessoa. Se ela sair, o sistema para.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="section section--tint" id="como-funciona" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="kicker">Como funciona</p>
+          <h2 id="how-title">Como assumimos o seu sistema em 4 passos</h2>
+        </header>
+        <ol class="journey" role="list">
+          <li data-reveal>
+            <span class="journey__num">01</span>
+            <h3>Diagnóstico gratuito</h3>
+            <p>Analisamos código, banco de dados, servidores e segurança. Você recebe um relatório com riscos e prioridades.</p>
+          </li>
+          <li data-reveal style="--delay: .08s">
+            <span class="journey__num">02</span>
+            <h3>Plano de estabilização</h3>
+            <p>Corrigimos primeiro o que é crítico: falhas de segurança, gargalos de performance e backups.</p>
+          </li>
+          <li data-reveal style="--delay: .16s">
+            <span class="journey__num">03</span>
+            <h3>Sustentação com SLA</h3>
+            <p>Chamados abertos por portal, WhatsApp ou e-mail, com prazos de resposta e solução garantidos em contrato.</p>
+          </li>
+          <li data-reveal style="--delay: .24s">
+            <span class="journey__num">04</span>
+            <h3>Evolução contínua</h3>
+            <p>Com o sistema estável, as horas do plano viram melhorias e novas funcionalidades.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="section" id="servicos" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Serviços</p>
+          <h2 id="services-title">Cuidamos de tudo que mantém sua operação rodando</h2>
+        </header>
+        <div class="services">
+          <article class="service service--lead" data-reveal>
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span>
+            <div>
+              <h3>Manutenção de sistemas</h3>
+              <p>Nossa especialidade: manter vivo e saudável o software que sustenta sua empresa.</p>
+            </div>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Corretiva:</strong> bugs e incidentes resolvidos com SLA</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Preventiva:</strong> atualização de versões e dependências</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Evolutiva:</strong> melhorias e novas funcionalidades</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Performance:</strong> otimização de banco e consultas</span></li>
+            </ul>
+          </article>
+          <article class="service" data-reveal style="--delay: .06s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+            <h3>Desenvolvimento de novos módulos</h3>
+            <p>Precisa de algo que o sistema não faz? Desenvolvemos módulos, integrações e APIs sobre a base existente — ou um sistema novo, quando faz mais sentido.</p>
+          </article>
+          <article class="service" data-reveal style="--delay: .12s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>Servidores e firewall</h3>
+            <p>Monitoramento 24/7, firewall, VPN, backups automatizados e testes de restauração, em nuvem ou em servidores locais.</p>
+          </article>
+          <article class="service" data-reveal style="--delay: .18s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <h3>Manutenção de aplicativos</h3>
+            <p>Atualizações para novas versões de iOS e Android, correção de travamentos e publicação nas lojas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planos -->
+    <section class="section section--tint" id="planos" aria-labelledby="plans-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="kicker">Planos de sustentação</p>
+          <h2 id="plans-title">Um plano para cada nível de criticidade</h2>
+          <p>Todos incluem diagnóstico inicial, portal de chamados e relatório mensal de horas e entregas.</p>
+        </header>
+        <div class="plans">
+          <article class="plan" data-reveal>
+            <h3>Essencial</h3>
+            <p class="plan__for">Para sistemas internos e de baixa criticidade</p>
+            <p class="plan__sla"><strong>8h úteis</strong> para a primeira resposta</p>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Até 20h/mês de manutenção</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Atendimento em horário comercial</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Atualizações de segurança mensais</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Backup diário monitorado</li>
+            </ul>
+            <a class="btn btn--outline btn--block" href="#diagnostico" data-prefill="plano=Essencial">Quero o Essencial</a>
+          </article>
+          <article class="plan plan--featured" data-reveal style="--delay: .08s">
+            <span class="plan__badge">Mais escolhido</span>
+            <h3>Profissional</h3>
+            <p class="plan__for">Para sistemas que vendem, faturam ou atendem clientes</p>
+            <p class="plan__sla"><strong>2h</strong> para a primeira resposta</p>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Até 60h/mês de manutenção e melhorias</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Monitoramento 24/7 de disponibilidade</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Gestão de servidores e firewall</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Reunião mensal de evolução</li>
+            </ul>
+            <a class="btn btn--light btn--block" href="#diagnostico" data-prefill="plano=Profissional">Quero o Profissional</a>
+          </article>
+          <article class="plan" data-reveal style="--delay: .16s">
+            <h3>Crítico</h3>
+            <p class="plan__for">Para operações que não podem parar</p>
+            <p class="plan__sla"><strong>30 min</strong> para a primeira resposta, 24/7</p>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Horas dimensionadas para a sua operação</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Plantão em feriados e fins de semana</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Contingência e plano de recuperação</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Gerente técnico dedicado</li>
+            </ul>
+            <a class="btn btn--outline btn--block" href="#diagnostico" data-prefill="plano=Crítico">Quero o Crítico</a>
+          </article>
+        </div>
+        <p class="plans__note">Valores sob consulta, de acordo com o tamanho e a tecnologia do sistema. Horas não utilizadas acumulam para o mês seguinte.</p>
+      </div>
+    </section>
+
+    <!-- Comparativo -->
+    <section class="section" aria-labelledby="compare-title">
+      <div class="container compare">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Por que ter um contrato</p>
+          <h2 id="compare-title">Manutenção avulsa × sustentação Zelo</h2>
+          <p>Chamar “alguém” quando quebra parece mais barato — até o dia em que o sistema para no pior momento.</p>
+        </header>
+        <div class="compare__table" data-reveal>
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col">Manutenção avulsa</th>
+                <th scope="col">Sustentação Zelo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Tempo de resposta</th>
+                <td data-label="Avulsa"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Quando der</td>
+                <td data-label="Zelo"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Garantido em contrato (SLA)</td>
+              </tr>
+              <tr>
+                <th scope="row">Conhecimento do sistema</th>
+                <td data-label="Avulsa"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Recomeça do zero a cada chamado</td>
+                <td data-label="Zelo"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Documentado e compartilhado pelo time</td>
+              </tr>
+              <tr>
+                <th scope="row">Prevenção de problemas</th>
+                <td data-label="Avulsa"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Só age depois que quebra</td>
+                <td data-label="Zelo"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Monitoramento e atualizações preventivas</td>
+              </tr>
+              <tr>
+                <th scope="row">Custo</th>
+                <td data-label="Avulsa"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Imprevisível, com hora emergencial</td>
+                <td data-label="Zelo"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Mensalidade fixa e previsível</td>
+              </tr>
+              <tr>
+                <th scope="row">Servidores e backups</th>
+                <td data-label="Avulsa"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Responsabilidade de outro fornecedor</td>
+                <td data-label="Zelo"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>No mesmo contrato e no mesmo time</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnologias -->
+    <section class="section section--tint stack" aria-labelledby="stack-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="kicker">Tecnologias</p>
+          <h2 id="stack-title">Mantemos sistemas nas principais tecnologias do mercado</h2>
+        </header>
+        <ul class="chips" role="list" data-reveal>
+          <li>PHP · Laravel</li><li>.NET · C#</li><li>Java · Spring</li><li>Node.js</li><li>Python · Django</li><li>Ruby on Rails</li><li>Delphi</li><li>React</li><li>Angular</li><li>Vue</li><li>Flutter</li><li>React Native</li><li>MySQL</li><li>PostgreSQL</li><li>SQL Server</li><li>Oracle</li><li>AWS</li><li>Azure</li><li>Google Cloud</li><li>Linux</li><li>Windows Server</li>
+        </ul>
+        <p class="stack__note">Não encontrou a sua? <a href="#diagnostico">Fale com a gente</a> — provavelmente já mantivemos algo parecido.</p>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="kicker">Depoimentos</p>
+          <h2 id="testimonials-title">Empresas que dormem tranquilas</h2>
+        </header>
+        <div class="testimonials">
+          <figure class="testimonial" data-reveal>
+            <p class="stars" role="img" aria-label="5 de 5 estrelas"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg></p>
+            <blockquote><p>“Nosso e-commerce caía toda Black Friday. Desde que a Zelo assumiu, passamos duas temporadas sem nenhuma queda.”</p></blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">PN</span><span><strong>Patrícia Nunes</strong>Gerente de E-commerce · Casa Brava Decor</span></figcaption>
+          </figure>
+          <figure class="testimonial" data-reveal style="--delay: .08s">
+            <p class="stars" role="img" aria-label="5 de 5 estrelas"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg></p>
+            <blockquote><p>“O fornecedor original fechou as portas e ficamos com um sistema em Delphi sem documentação. Em três semanas a Zelo já estava resolvendo chamados.”</p></blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">RL</span><span><strong>Roberto Lins</strong>Diretor Administrativo · Lins &amp; Filhos Distribuidora</span></figcaption>
+          </figure>
+          <figure class="testimonial" data-reveal style="--delay: .16s">
+            <p class="stars" role="img" aria-label="5 de 5 estrelas"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg></p>
+            <blockquote><p>“Os relatórios mensais mostram exatamente onde as horas foram usadas. É a primeira vez que manutenção de TI é previsível para nós.”</p></blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">CF</span><span><strong>Camila Ferraz</strong>CFO · Rede Saúde Mais</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagnóstico / formulário -->
+    <section class="section diagnostic" id="diagnostico" aria-labelledby="diagnostic-title">
+      <div class="container diagnostic__grid">
+        <div class="diagnostic__copy">
+          <p class="kicker kicker--light">Diagnóstico técnico gratuito</p>
+          <h2 id="diagnostic-title">Descubra a saúde do seu sistema antes que ele dê sinais</h2>
+          <p>Em até 5 dias úteis você recebe um relatório com o estado do seu sistema e um plano de ação — sem compromisso de contratação.</p>
+          <h3>O diagnóstico inclui</h3>
+          <ul class="ticks ticks--light" role="list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Análise de código e de dependências desatualizadas</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Verificação de segurança e exposição de dados</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Avaliação de servidores, backups e firewall</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Mapa de riscos com prioridades e estimativas</li>
+          </ul>
+        </div>
+
+        <div class="form-panel">
+          <form class="lead-form" id="form-diagnostico" method="post" data-lead-form data-wa-intro="Olá! Solicitei um diagnóstico gratuito pelo site da Zelo Tecnologia.">
+            <div class="field">
+              <label for="d-nome">Nome *</label>
+              <input id="d-nome" name="nome" type="text" autocomplete="name" required>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="d-email">E-mail *</label>
+                <input id="d-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="d-whats">WhatsApp *</label>
+                <input id="d-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" pattern="[0-9()+ .\-]{10,20}" data-mask="phone" required>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="d-empresa">Empresa *</label>
+                <input id="d-empresa" name="empresa" type="text" autocomplete="organization" required>
+              </div>
+              <div class="field">
+                <label for="d-plano">Plano de interesse</label>
+                <select id="d-plano" name="plano">
+                  <option value="">Ainda não sei</option>
+                  <option>Essencial</option>
+                  <option>Profissional</option>
+                  <option>Crítico</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="d-tech">Tecnologia do sistema <span>(opcional)</span></label>
+              <input id="d-tech" name="tecnologia" type="text" placeholder="Ex.: PHP/Laravel, .NET, Delphi…">
+            </div>
+            <div class="field">
+              <label for="d-msg">O que está acontecendo? <span>(opcional)</span></label>
+              <textarea id="d-msg" name="mensagem" rows="3"></textarea>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit">Solicitar diagnóstico gratuito <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form-note">Ao enviar, você concorda com o uso dos dados para retorno do contato (<a href="#privacidade">privacidade</a>).</p>
+
+            <div class="form-success" data-form-success hidden>
+              <span class="form-success__icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+              <h3>Pedido recebido<span data-success-name></span>!</h3>
+              <p>Um técnico vai entrar em contato em até 1 dia útil para agendar o diagnóstico. Se for urgente, chame agora:</p>
+              <a class="btn btn--primary" href="https://wa.me/5511900000000" target="_blank" rel="noopener" data-success-whatsapp data-track="sucesso-formulario">
+                <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg> Continuar no WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="kicker">Dúvidas frequentes</p>
+          <h2 id="faq-title">Perguntas sobre manutenção e sustentação</h2>
+        </header>
+        <div class="faq">
+          <details name="faq">
+            <summary>Vocês fazem manutenção em sistemas desenvolvidos por outra empresa?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Sim, é a maior parte do nosso trabalho. Começamos pelo diagnóstico técnico, documentamos o que encontramos e só então assumimos a sustentação.</p>
+          </details>
+          <details name="faq">
+            <summary>E se o sistema não tiver documentação nenhuma?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>É mais comum do que parece. Durante o onboarding criamos a documentação essencial: arquitetura, rotinas críticas, acessos e procedimentos de publicação.</p>
+          </details>
+          <details name="faq">
+            <summary>Como abro um chamado?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Pelo portal de chamados, WhatsApp ou e-mail. Cada chamado recebe prioridade e prazo conforme o SLA do seu plano, e você acompanha tudo em tempo real.</p>
+          </details>
+          <details name="faq">
+            <summary>Preciso contratar por quanto tempo?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Os planos são mensais, com permanência mínima de 3 meses — o tempo necessário para estabilizar e conhecer bem o sistema.</p>
+          </details>
+          <details name="faq">
+            <summary>Vocês também cuidam do servidor e do firewall?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Sim. Nos planos Profissional e Crítico, a gestão de servidores, firewall, VPN e backups já está incluída. No Essencial, pode ser contratada à parte.</p>
+          </details>
+          <details name="faq">
+            <summary>E se eu precisar de uma funcionalidade nova?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>As horas do plano podem ser usadas em melhorias. Para projetos maiores, enviamos uma proposta separada com escopo e prazo fechados.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+    <a class="wa-float" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Zelo%20Tecnologia%20e%20preciso%20de%20ajuda%20com%20a%20manuten%C3%A7%C3%A3o%20de%20um%20sistema." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" data-track="botao-flutuante">
+      <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <a class="brand brand--light" href="#topo" aria-label="Zelo Tecnologia — voltar ao topo">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="9"/>
+            <path d="M6 17h5l2.5-6 3.5 10 2.5-6H26"/>
+          </svg>
+          <span class="brand__name">zelo<span>tecnologia</span></span>
+        </a>
+        <p class="site-footer__about">Manutenção e sustentação de sistemas, servidores e aplicativos com SLA em contrato.</p>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Contato</h2>
+        <ul role="list">
+          <li><a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Zelo%20Tecnologia%20e%20preciso%20de%20ajuda%20com%20a%20manuten%C3%A7%C3%A3o%20de%20um%20sistema." target="_blank" rel="noopener" data-track="rodape">(11) 90000-0000</a></li>
+          <li><a href="mailto:suporte@zelo.example">suporte@zelo.example</a></li>
+          <li>Av. Exemplo, 456 — Campinas/SP</li>
+        </ul>
+      </div>
+      <div id="privacidade">
+        <h2 class="site-footer__title">Privacidade</h2>
+        <p>Usamos os dados do formulário apenas para responder ao seu contato e agendar o diagnóstico, conforme a LGPD.</p>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© <span data-year>2026</span> Zelo Tecnologia Ltda. · CNPJ 00.000.000/0001-00</p>
+      <p>Página demonstrativa: empresa, números e depoimentos fictícios. <a href="../../index.html">Voltar ao catálogo</a></p>
+    </div>
+  </footer>
+</body>
+</html>

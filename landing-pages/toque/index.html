@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toque Apps · Desenvolvimento de aplicativos iOS e Android sob medida</title>
+  <meta name="description" content="Criamos aplicativos iOS e Android sob medida, com backend, painel administrativo e manutenção. Do protótipo à publicação nas lojas em até 12 semanas. Simule o prazo do seu app.">
+  <!-- Página de demonstração com empresa fictícia: remova o noindex ao usar com uma empresa real. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#6D28D9">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Toque Apps · Seu app nas lojas em até 12 semanas">
+  <meta property="og:description" content="Aplicativos iOS e Android sob medida, do protótipo à publicação, com backend e manutenção inclusos.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237C3AED'/%3E%3Cstop offset='1' stop-color='%23E11D48'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='10' fill='url(%23g)'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23fff'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23fff' stroke-opacity='.5' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Sora:wght@500..800&display=swap">
+  <link rel="stylesheet" href="../../assets/shared/base.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Ativa o modo com JS antes da primeira pintura; se lp.js não carregar, volta ao modo sem JS.
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.lpReady) document.documentElement.classList.remove('js'); }, 3000);
+  </script>
+  <script src="../../assets/shared/lp.js" defer></script>
+</head>
+<body data-whatsapp="5511900000000">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.16 11.9c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 6.98 2.9 9.83 9.83 0 0 1 2.9 6.99c-.01 5.45-4.44 9.88-9.89 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.42"/></symbol>
+  </svg>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="brand" href="#topo" aria-label="Toque Apps — início">
+        <span class="brand__mark" aria-hidden="true"><i></i></span>
+        <span class="brand__name">toque<span>apps</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu" data-nav-toggle>
+        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+
+      <nav class="site-nav" id="menu" aria-label="Principal" data-nav>
+        <ul role="list">
+          <li><a href="#apps">Apps</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#simulador">Simulador</a></li>
+          <li><a href="#cases">Cases</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+        <a class="btn btn--grad btn--sm" href="#orcamento">Orçar meu app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="hero" id="topo">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="badge"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg><span><strong>4,8</strong> de média nas lojas · +90 apps publicados</span></p>
+          <h1>Do rascunho à App Store: <span class="grad-text">seu app nas lojas</span> em até 12 semanas.</h1>
+          <p class="hero__lead">Somos uma fábrica de aplicativos sob medida. Desenhamos, desenvolvemos e publicamos apps iOS e Android — com backend, painel administrativo, servidores e manutenção inclusos.</p>
+          <div class="hero__actions">
+            <a class="btn btn--grad" href="#orcamento">Quero orçar meu app <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--soft" href="#cases">Ver apps que criamos</a>
+          </div>
+          <div class="hero__trust">
+            <span class="faces" aria-hidden="true"><i>FL</i><i>RM</i><i>GH</i><i>+</i></span>
+            <p>Mais de 90 empresas já lançaram seus apps com a gente</p>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="blob"></div>
+          <div class="phone phone--back">
+            <div class="phone__screen screen-map">
+              <svg class="map-route" viewBox="0 0 200 300" preserveAspectRatio="none">
+                <path d="M30 250C70 220 40 170 95 150S150 80 170 45"/>
+              </svg>
+              <span class="map-pin map-pin--start"></span>
+              <span class="map-pin map-pin--end"></span>
+              <div class="track-card">
+                <strong>Pedido a caminho</strong>
+                <small>Chega em 12 min</small>
+                <span class="track-steps"><i class="is-done"></i><i class="is-done"></i><i></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--front">
+            <div class="phone__screen screen-app">
+              <div class="app-top"><span>Olá, Marina</span><i>M</i></div>
+              <div class="app-points">
+                <small>Seus pontos</small>
+                <strong>1.250</strong>
+                <span class="app-progress"><i></i></span>
+                <small>Faltam 250 pts para um café grátis</small>
+              </div>
+              <p class="app-section">Para você hoje</p>
+              <div class="app-offer"><span class="app-offer__img"></span><span><strong>Cappuccino em dobro</strong><small>Pontos x2 até 18h</small></span></div>
+              <div class="app-offer"><span class="app-offer__img app-offer__img--alt"></span><span><strong>Combo da manhã</strong><small>R$ 14,90</small></span></div>
+              <div class="app-tabbar"><i class="is-active"></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="sticker sticker--rating"><svg class="icon icon--fill"><use href="#i-star"/></svg> 4,9 na App Store</div>
+          <div class="sticker sticker--push"><svg class="icon"><use href="#i-bell"/></svg> Push enviado para 18 mil usuários</div>
+          <div class="sticker sticker--trend"><svg class="icon"><use href="#i-trend"/></svg> +42% de recompra</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos -->
+    <section class="logos" aria-label="Clientes">
+      <div class="container">
+        <p>Apps que criamos estão nas mãos dos clientes de</p>
+        <ul role="list">
+          <li>Grão Nobre</li><li>FitLab</li><li>Mercado Bom Dia</li><li>Pet&amp;Cia</li><li>AgroSul</li><li>Vai de Bike</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tipos de app -->
+    <section class="section" id="apps" aria-labelledby="apps-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Tipos de app</p>
+          <h2 id="apps-title">Que tipo de app você quer tirar do papel?</h2>
+          <p>Escolha um ponto de partida — a gente adapta para o seu negócio e já leva sua escolha para o orçamento.</p>
+        </header>
+        <ul class="types" role="list">
+          <li data-reveal>
+            <a class="type" href="#orcamento" data-prefill="tipo=Delivery e pedidos">
+              <span class="type__icon type__icon--1"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>
+              <h3>Delivery e pedidos</h3>
+              <p>Cardápio, carrinho, pagamento e rastreio em tempo real.</p>
+              <span class="type__cta">Quero um app assim <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li data-reveal style="--delay: .05s">
+            <a class="type" href="#orcamento" data-prefill="tipo=Fidelidade e cashback">
+              <span class="type__icon type__icon--2"><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg></span>
+              <h3>Fidelidade e cashback</h3>
+              <p>Pontos, cupons e campanhas que trazem o cliente de volta.</p>
+              <span class="type__cta">Quero um app assim <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li data-reveal style="--delay: .1s">
+            <a class="type" href="#orcamento" data-prefill="tipo=Marketplace">
+              <span class="type__icon type__icon--3"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <h3>Marketplace</h3>
+              <p>Conecte vendedores e compradores com divisão automática de pagamento.</p>
+              <span class="type__cta">Quero um app assim <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li data-reveal>
+            <a class="type" href="#orcamento" data-prefill="tipo=Agendamento">
+              <span class="type__icon type__icon--4"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+              <h3>Agendamento</h3>
+              <p>Reservas, lembretes automáticos e pagamento antecipado.</p>
+              <span class="type__cta">Quero um app assim <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li data-reveal style="--delay: .05s">
+            <a class="type" href="#orcamento" data-prefill="tipo=App corporativo">
+              <span class="type__icon type__icon--5"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
+              <h3>App corporativo</h3>
+              <p>Força de vendas, checklists de campo e operação offline.</p>
+              <span class="type__cta">Quero um app assim <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li data-reveal style="--delay: .1s">
+            <a class="type" href="#orcamento" data-prefill="tipo=MVP para startup">
+              <span class="type__icon type__icon--6"><svg class="icon" aria-hidden="true"><use href="#i-rocket"/></svg></span>
+              <h3>MVP para startups</h3>
+              <p>Valide sua ideia rápido, com o essencial bem feito.</p>
+              <span class="type__cta">Quero um app assim <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="section section--soft" id="servicos" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Tudo em um só time</p>
+          <h2 id="services-title">O app não vive sozinho. A gente cuida de tudo em volta dele.</h2>
+        </header>
+        <div class="services">
+          <article class="service service--lead" data-reveal>
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <h3>Desenvolvimento de apps</h3>
+            <p>Apps iOS e Android nativos ou multiplataforma, com design pensado para conversão e performance.</p>
+            <ul class="pills" role="list"><li>Flutter</li><li>React Native</li><li>Swift</li><li>Kotlin</li></ul>
+          </article>
+          <article class="service" data-reveal style="--delay: .06s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+            <h3>Backend e sistemas web</h3>
+            <p>APIs, painel administrativo e integrações com ERP, pagamentos e logística.</p>
+          </article>
+          <article class="service" data-reveal style="--delay: .12s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span>
+            <h3>Manutenção e evolução</h3>
+            <p>Atualizações para novas versões de iOS e Android, monitoramento de falhas e novas funcionalidades.</p>
+          </article>
+          <article class="service" data-reveal style="--delay: .18s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>Servidores e segurança</h3>
+            <p>Hospedagem escalável, firewall, backups e proteção de dados conforme a LGPD.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Processo -->
+    <section class="section" id="processo" aria-labelledby="process-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Processo</p>
+          <h2 id="process-title">Da ideia à loja em 6 etapas</h2>
+          <p>Você testa o app no seu celular desde a terceira semana — e acompanha cada entrega.</p>
+        </header>
+        <ol class="timeline" role="list">
+          <li data-reveal>
+            <span class="timeline__when">Semanas 1–2</span>
+            <h3>Descoberta</h3>
+            <p>Workshop para definir público, funcionalidades essenciais e métricas de sucesso.</p>
+          </li>
+          <li data-reveal>
+            <span class="timeline__when">Semanas 2–3</span>
+            <h3>Design e protótipo</h3>
+            <p>Telas no Figma que você testa no seu celular antes de começar o desenvolvimento.</p>
+          </li>
+          <li data-reveal>
+            <span class="timeline__when">Semanas 4–9</span>
+            <h3>Desenvolvimento</h3>
+            <p>Sprints quinzenais com versões de teste instaladas no seu aparelho.</p>
+          </li>
+          <li data-reveal>
+            <span class="timeline__when">Semana 10</span>
+            <h3>Testes</h3>
+            <p>Testes em dezenas de aparelhos reais, de desempenho e de segurança.</p>
+          </li>
+          <li data-reveal>
+            <span class="timeline__when">Semana 11</span>
+            <h3>Publicação</h3>
+            <p>Cuidamos de todo o processo de aprovação na App Store e no Google Play.</p>
+          </li>
+          <li data-reveal>
+            <span class="timeline__when">Semana 12 em diante</span>
+            <h3>Crescimento</h3>
+            <p>Métricas, notificações, atualizações e novas funcionalidades com base no uso real.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Simulador -->
+    <section class="section section--soft" id="simulador" aria-labelledby="sim-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Simulador</p>
+          <h2 id="sim-title">Simule o prazo do seu app</h2>
+          <p>Escolha as plataformas e as funcionalidades. A estimativa considera descoberta, design, desenvolvimento, testes e publicação.</p>
+        </header>
+
+        <div class="estimator" data-estimator data-base-weeks="6" data-reveal>
+          <div class="estimator__options">
+            <fieldset>
+              <legend>Plataformas</legend>
+              <div class="options options--stack">
+                <label class="option"><input type="radio" name="sim-plataforma" value="Android ou iOS" data-weeks="0"><span>Só Android ou só iOS</span></label>
+                <label class="option"><input type="radio" name="sim-plataforma" value="iOS e Android (multiplataforma)" data-weeks="1" checked><span>iOS e Android · multiplataforma</span></label>
+                <label class="option"><input type="radio" name="sim-plataforma" value="iOS e Android (nativo)" data-weeks="5"><span>iOS e Android · nativo</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Funcionalidades</legend>
+              <div class="options">
+                <label class="option"><input type="checkbox" value="Login e cadastro" data-weeks="1" checked><span>Login e cadastro</span></label>
+                <label class="option"><input type="checkbox" value="Pagamentos no app" data-weeks="2"><span>Pagamentos no app</span></label>
+                <label class="option"><input type="checkbox" value="Geolocalização e mapas" data-weeks="2"><span>Geolocalização e mapas</span></label>
+                <label class="option"><input type="checkbox" value="Chat em tempo real" data-weeks="2"><span>Chat em tempo real</span></label>
+                <label class="option"><input type="checkbox" value="Notificações push" data-weeks="1" checked><span>Notificações push</span></label>
+                <label class="option"><input type="checkbox" value="Painel administrativo web" data-weeks="3"><span>Painel administrativo web</span></label>
+                <label class="option"><input type="checkbox" value="Integração com ERP ou sistema" data-weeks="2"><span>Integração com ERP</span></label>
+                <label class="option"><input type="checkbox" value="Funcionamento offline" data-weeks="2"><span>Funcionar offline</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="estimator__result" data-js-only>
+            <p class="estimator__label">Prazo estimado</p>
+            <p class="estimator__value" aria-live="polite"><span data-estimate-min>9</span> a <span data-estimate-max>12</span> <small>semanas</small></p>
+            <p class="estimator__hint">Do kickoff à publicação nas lojas. O prazo final é definido depois da etapa de descoberta.</p>
+            <a class="btn btn--light btn--block" href="#orcamento" data-estimate-cta data-prefill="">Receber proposta detalhada <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nativo x multiplataforma -->
+    <section class="section" aria-labelledby="choice-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Tecnologia</p>
+          <h2 id="choice-title">Nativo ou multiplataforma? A gente ajuda a escolher</h2>
+        </header>
+        <div class="choice">
+          <article class="choice__card" data-reveal>
+            <span class="choice__tag">Indicado para 8 em cada 10 projetos</span>
+            <h3>Multiplataforma</h3>
+            <p class="choice__tech">Flutter · React Native</p>
+            <p>Um único código para iOS e Android.</p>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Até 40% mais econômico</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Lançamento simultâneo nas duas lojas</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Ideal para a maioria dos apps de negócio</li>
+            </ul>
+          </article>
+          <article class="choice__card choice__card--alt" data-reveal style="--delay: .08s">
+            <span class="choice__tag">Para apps que exigem o máximo</span>
+            <h3>Nativo</h3>
+            <p class="choice__tech">Swift · Kotlin</p>
+            <p>Um app dedicado para cada plataforma.</p>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Máximo desempenho e acesso a recursos do aparelho</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Ideal para câmera, realidade aumentada e Bluetooth</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Experiência 100% no padrão de cada sistema</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cases -->
+    <section class="section section--soft" id="cases" aria-labelledby="cases-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Cases</p>
+          <h2 id="cases-title">Apps que criamos — e os resultados que geraram</h2>
+        </header>
+        <div class="cases">
+          <article class="case" data-reveal>
+            <div class="case__art case__art--1" aria-hidden="true"><span class="mini-phone"><i></i><i></i><i></i></span></div>
+            <p class="case__tag">Fidelidade</p>
+            <h3>Café Grão Nobre</h3>
+            <p>App de pontos e pedidos antecipados para uma rede de 34 cafeterias.</p>
+            <dl class="case__stats"><div><dt>usuários ativos</dt><dd>120 mil</dd></div><div><dt>de recompra</dt><dd>+42%</dd></div></dl>
+          </article>
+          <article class="case" data-reveal style="--delay: .06s">
+            <div class="case__art case__art--2" aria-hidden="true"><span class="mini-phone"><i></i><i></i><i></i></span></div>
+            <p class="case__tag">Agendamento</p>
+            <h3>FitLab</h3>
+            <p>Reserva de aulas, check-in por QR code e planos recorrentes para academias.</p>
+            <dl class="case__stats"><div><dt>nas lojas</dt><dd>4,9★</dd></div><div><dt>de faltas às aulas</dt><dd>−60%</dd></div></dl>
+          </article>
+          <article class="case" data-reveal style="--delay: .12s">
+            <div class="case__art case__art--3" aria-hidden="true"><span class="mini-phone"><i></i><i></i><i></i></span></div>
+            <p class="case__tag">App corporativo</p>
+            <h3>AgroSul</h3>
+            <p>Visitas técnicas no campo, sem internet, sincronizadas com o ERP da cooperativa.</p>
+            <dl class="case__stats"><div><dt>técnicos usando</dt><dd>1.800</dd></div><div><dt>funcional sem sinal</dt><dd>100%</dd></div></dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Depoimentos</p>
+          <h2 id="testimonials-title">Quem lançou com a Toque recomenda</h2>
+        </header>
+        <div class="testimonials">
+          <figure class="testimonial" data-reveal>
+            <blockquote><p>“Saímos de uma ideia no guardanapo para um app com 120 mil usuários. A Toque pensou em cada detalhe junto com a gente.”</p></blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">FL</span><span><strong>Fernanda Lopes</strong>Fundadora · Café Grão Nobre</span></figcaption>
+          </figure>
+          <figure class="testimonial" data-reveal style="--delay: .06s">
+            <blockquote><p>“O protótipo que testamos no celular na terceira semana deu segurança para todo o investimento.”</p></blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">RM</span><span><strong>Rafael Moreira</strong>CEO · FitLab</span></figcaption>
+          </figure>
+          <figure class="testimonial" data-reveal style="--delay: .12s">
+            <blockquote><p>“O app funciona sem internet no meio da lavoura e sincroniza tudo com o nosso ERP. Era exatamente o que precisávamos.”</p></blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">GH</span><span><strong>Gustavo Henrique</strong>Gerente de TI · AgroSul</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--soft" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Dúvidas</p>
+          <h2 id="faq-title">Perguntas frequentes sobre apps</h2>
+        </header>
+        <div class="faq">
+          <details name="faq">
+            <summary>Quanto custa desenvolver um aplicativo?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Depende das plataformas, das funcionalidades e das integrações. Apps de negócio costumam partir de R$ 60 mil, e MVPs enxutos podem começar menores. Use o simulador acima e peça uma proposta detalhada.</p>
+          </details>
+          <details name="faq">
+            <summary>Quanto tempo leva para o app ficar pronto?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Entre 8 e 16 semanas para a maioria dos projetos. O simulador dá uma estimativa de acordo com as funcionalidades escolhidas.</p>
+          </details>
+          <details name="faq">
+            <summary>O app fica registrado no nome da minha empresa?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Sim. As contas de desenvolvedor da Apple e do Google ficam no nome da sua empresa, assim como o código-fonte e todos os acessos.</p>
+          </details>
+          <details name="faq">
+            <summary>Vocês publicam o app nas lojas?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Sim, cuidamos de todo o processo: textos, imagens, política de privacidade e acompanhamento da aprovação na App Store e no Google Play.</p>
+          </details>
+          <details name="faq">
+            <summary>E depois do lançamento?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Oferecemos planos de manutenção com atualizações para novas versões do iOS e do Android, monitoramento de falhas, servidores e evolução contínua.</p>
+          </details>
+          <details name="faq">
+            <summary>Vocês assinam acordo de confidencialidade?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Sim. Assinamos NDA antes de qualquer detalhe da sua ideia ser compartilhado.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Orçamento -->
+    <section class="section quote-section" id="orcamento" aria-labelledby="quote-title">
+      <div class="container">
+        <div class="quote-box">
+          <div class="quote-box__copy">
+            <p class="eyebrow eyebrow--light">Orçamento sem compromisso</p>
+            <h2 id="quote-title">Vamos tirar seu app do papel?</h2>
+            <p>Responda em 1 minuto e receba uma proposta com escopo, prazo e investimento em até 2 dias úteis.</p>
+            <ul class="ticks ticks--light" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>NDA antes de qualquer detalhe</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Proposta com escopo fechado</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Código e contas das lojas no seu nome</li>
+            </ul>
+          </div>
+
+          <form class="lead-form" id="form-orcamento" method="post" data-lead-form data-wa-intro="Olá! Pedi um orçamento de aplicativo pelo site da Toque Apps.">
+            <div class="field">
+              <label for="o-nome">Nome *</label>
+              <input id="o-nome" name="nome" type="text" autocomplete="name" required>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="o-email">E-mail *</label>
+                <input id="o-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="o-whats">WhatsApp *</label>
+                <input id="o-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" pattern="[0-9()+ .\-]{10,20}" data-mask="phone" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="o-tipo">Tipo de app *</label>
+              <select id="o-tipo" name="tipo" required>
+                <option value="">Selecione</option>
+                <option>Delivery e pedidos</option>
+                <option>Fidelidade e cashback</option>
+                <option>Marketplace</option>
+                <option>Agendamento</option>
+                <option>App corporativo</option>
+                <option>MVP para startup</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <fieldset class="field">
+              <legend>Em que estágio está o projeto?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="estagio" value="Só a ideia" checked><span>Só a ideia</span></label>
+                <label class="chip"><input type="radio" name="estagio" value="Já tenho protótipo"><span>Já tenho protótipo</span></label>
+                <label class="chip"><input type="radio" name="estagio" value="App existente para evoluir"><span>App existente</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="o-msg">Conte um pouco sobre o app <span>(opcional)</span></label>
+              <textarea id="o-msg" name="mensagem" rows="3"></textarea>
+            </div>
+            <button class="btn btn--grad btn--block" type="submit">Quero minha proposta <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form-note">Usamos seus dados só para responder ao pedido (<a href="#privacidade">privacidade</a>).</p>
+
+            <div class="form-success" data-form-success hidden>
+              <span class="form-success__icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+              <h3>Recebemos seu pedido<span data-success-name></span>!</h3>
+              <p>Em até 2 dias úteis você recebe a proposta. Se quiser, já podemos conversar sobre a ideia:</p>
+              <a class="btn btn--grad" href="https://wa.me/5511900000000" target="_blank" rel="noopener" data-success-whatsapp data-track="sucesso-formulario">
+                <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg> Continuar no WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <a class="wa-float" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Toque%20Apps%20e%20quero%20or%C3%A7ar%20um%20aplicativo." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" data-track="botao-flutuante">
+      <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <a class="brand brand--light" href="#topo" aria-label="Toque Apps — voltar ao topo">
+          <span class="brand__mark" aria-hidden="true"><i></i></span>
+          <span class="brand__name">toque<span>apps</span></span>
+        </a>
+        <p class="site-footer__about">Aplicativos iOS e Android sob medida, com backend, servidores e manutenção.</p>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Contato</h2>
+        <ul role="list">
+          <li><a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Toque%20Apps%20e%20quero%20or%C3%A7ar%20um%20aplicativo." target="_blank" rel="noopener" data-track="rodape">(11) 90000-0000</a></li>
+          <li><a href="mailto:oi@toque.example">oi@toque.example</a></li>
+          <li>Rua Exemplo, 321 — Florianópolis/SC</li>
+        </ul>
+      </div>
+      <div id="privacidade">
+        <h2 class="site-footer__title">Privacidade</h2>
+        <p>Os dados enviados são usados apenas para preparar e enviar sua proposta, conforme a LGPD.</p>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© <span data-year>2026</span> Toque Apps Ltda. · CNPJ 00.000.000/0001-00</p>
+      <p>Página demonstrativa: empresa, números e depoimentos fictícios. <a href="../../index.html">Voltar ao catálogo</a></p>
+    </div>
+  </footer>
+</body>
+</html>

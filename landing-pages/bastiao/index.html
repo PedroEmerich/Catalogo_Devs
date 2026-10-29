@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bastião · Servidores, firewall e infraestrutura de TI gerenciada</title>
+  <meta name="description" content="Firewall gerenciado, servidores em nuvem ou locais, VPN, backup e monitoramento 24/7 para empresas que não podem parar. Agende um diagnóstico de segurança gratuito.">
+  <!-- Página de demonstração com empresa fictícia: remova o noindex ao usar com uma empresa real. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#070B14">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Bastião · Servidores e firewall gerenciados 24/7">
+  <meta property="og:description" content="Sua rede protegida e sua operação no ar, com monitoramento 24/7 e resposta a incidentes em até 15 minutos.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070B14'/%3E%3Cpath d='M6 5h4v3h4V5h4v3h4V5h4v9c0 7-4.5 11.5-10 13.5C10.5 25.5 6 21 6 14z' fill='%2334D399'/%3E%3Ccircle cx='16' cy='13.5' r='2.3' fill='%23070B14'/%3E%3Cpath d='M14.9 14.5h2.2V19h-2.2z' fill='%23070B14'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="../../assets/shared/base.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Ativa o modo com JS antes da primeira pintura; se lp.js não carregar, volta ao modo sem JS.
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.lpReady) document.documentElement.classList.remove('js'); }, 3000);
+  </script>
+  <script src="../../assets/shared/lp.js" defer></script>
+</head>
+<body data-whatsapp="5511900000000">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></symbol>
+    <symbol id="i-archive" viewBox="0 0 24 24"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.16 11.9c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 6.98 2.9 9.83 9.83 0 0 1 2.9 6.99c-.01 5.45-4.44 9.88-9.89 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.42"/></symbol>
+  </svg>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="brand" href="#topo" aria-label="Bastião Infra e Segurança — início">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="brand__wall" d="M6 5h4v3h4V5h4v3h4V5h4v9c0 7-4.5 11.5-10 13.5C10.5 25.5 6 21 6 14z"/>
+          <circle class="brand__hole" cx="16" cy="13.5" r="2.3"/>
+          <path class="brand__hole" d="M14.9 14.5h2.2V19h-2.2z"/>
+        </svg>
+        <span class="brand__name">Bastião<small>infra &amp; segurança</small></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu" data-nav-toggle>
+        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+
+      <nav class="site-nav" id="menu" aria-label="Principal" data-nav>
+        <ul role="list">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#autodiagnostico">Autodiagnóstico</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+        <a class="btn btn--accent btn--sm" href="#contato">Diagnóstico gratuito</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="hero" id="topo">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="mono-label"><span aria-hidden="true">//</span> infraestrutura · segurança · monitoramento 24/7</p>
+          <h1>Servidores e firewall gerenciados para empresas que <span class="accent">não podem parar.</span></h1>
+          <p class="hero__lead">Projetamos, implantamos e monitoramos sua infraestrutura de TI — servidores, firewall, VPN e backups — com resposta a incidentes 24/7 e relatório mensal de segurança.</p>
+          <div class="hero__actions">
+            <a class="btn btn--accent" href="#contato">Agendar diagnóstico gratuito <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--line" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Basti%C3%A3o%20e%20quero%20falar%20com%20um%20engenheiro%20sobre%20minha%20infraestrutura." target="_blank" rel="noopener" data-track="hero">
+              <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg> Falar com um engenheiro
+            </a>
+          </div>
+          <ul class="hero__badges" role="list">
+            <li><b>15 min</b> SLA para incidentes críticos</li>
+            <li><b>24/7</b> NOC com equipe própria</li>
+            <li><b>LGPD</b> controles e evidências</li>
+          </ul>
+        </div>
+
+        <div class="terminal" aria-hidden="true">
+          <div class="terminal__bar"><i></i><i></i><i></i><span>bastiao@noc:~$ tail -f firewall.log</span></div>
+          <div class="terminal__body">
+            <p class="t-line"><time>14:02:11</time><b class="t-block">BLOCK</b><span>203.0.113.45 → 3389/tcp</span><em>força bruta (RDP)</em></p>
+            <p class="t-line"><time>14:02:12</time><b class="t-block">BLOCK</b><span>198.51.100.7 → 22/tcp</span><em>varredura de portas</em></p>
+            <p class="t-line"><time>14:02:15</time><b class="t-ok">OK</b><span>vpn-filial-02</span><em>túnel IPsec ativo · 38 ms</em></p>
+            <p class="t-line"><time>14:02:19</time><b class="t-ok">OK</b><span>backup srv-db01</span><em>214 GB · verificado</em></p>
+            <p class="t-line"><time>14:02:23</time><b class="t-warn">ALERT</b><span>srv-app01 CPU 91%</span><em>escalado ao plantão</em></p>
+            <p class="t-line"><time>14:02:31</time><b class="t-ok">OK</b><span>srv-app01</span><em>carga normalizada · 42%</em></p>
+            <p class="t-line"><time>14:02:32</time><span class="cursor"></span></p>
+          </div>
+          <div class="terminal__foot">
+            <span><b>1.284</b> ameaças bloqueadas hoje</span>
+            <span><i class="dot"></i><b>0</b> incidentes abertos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Números -->
+    <section class="metrics" aria-label="Números da Bastião">
+      <div class="container">
+        <dl class="metrics__grid">
+          <div><dt>ameaças bloqueadas por mês</dt><dd data-count="2.3" data-decimals="1" data-suffix=" mi">2,3 mi</dd></div>
+          <div><dt>de disponibilidade média dos ambientes</dt><dd data-count="99.95" data-decimals="2" data-suffix="%">99,95%</dd></div>
+          <div><dt>para responder a incidentes críticos</dt><dd><span data-count="15">15</span> min</dd></div>
+          <div><dt>de monitoramento com equipe própria</dt><dd>24/7</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Autodiagnóstico -->
+    <section class="section" id="autodiagnostico" aria-labelledby="quiz-title">
+      <div class="container quiz-layout">
+        <header class="section-head" data-reveal>
+          <p class="mono-label"><span aria-hidden="true">01</span> autodiagnóstico · 1 minuto</p>
+          <h2 id="quiz-title">Sua infraestrutura está exposta?</h2>
+          <p>Marque o que acontece hoje na sua empresa. O resultado é calculado na hora, aqui mesmo no seu navegador.</p>
+        </header>
+
+        <div class="quiz" data-risk data-reveal>
+          <fieldset class="quiz__items">
+            <legend class="sr-only">Situações que acontecem na sua empresa</legend>
+            <label class="quiz__item"><input type="checkbox" data-weight="3"><span>A internet chega por um roteador da operadora, sem firewall dedicado</span></label>
+            <label class="quiz__item"><input type="checkbox" data-weight="3"><span>Funcionários acessam o servidor de casa por RDP ou AnyDesk, sem VPN</span></label>
+            <label class="quiz__item"><input type="checkbox" data-weight="3"><span>Os backups nunca foram testados — ou ficam no mesmo local do servidor</span></label>
+            <label class="quiz__item"><input type="checkbox" data-weight="2"><span>Servidores e sistemas estão há meses sem atualizações</span></label>
+            <label class="quiz__item"><input type="checkbox" data-weight="2"><span>Senhas de acesso são compartilhadas entre a equipe</span></label>
+            <label class="quiz__item"><input type="checkbox" data-weight="2"><span>Ninguém monitora a rede fora do horário comercial</span></label>
+            <label class="quiz__item"><input type="checkbox" data-weight="2"><span>Ex-funcionários ainda podem ter acesso a algum sistema</span></label>
+            <label class="quiz__item"><input type="checkbox" data-weight="3"><span>Não existe um plano do que fazer se um ransomware atacar</span></label>
+          </fieldset>
+
+          <div class="quiz__result" data-js-only>
+            <p class="quiz__count"><span data-risk-count>0 de 8</span> itens marcados</p>
+            <div class="quiz__meter" aria-hidden="true"><span data-risk-bar></span></div>
+            <div class="quiz__levels" aria-live="polite">
+              <div data-risk-level="0" data-risk-name="nenhum" data-risk-label="nenhum item marcado">
+                <h3>Marque os itens ao lado</h3>
+                <p>Mesmo sem nenhum item, vale validar com um diagnóstico técnico: muitos riscos não aparecem no dia a dia.</p>
+              </div>
+              <div data-risk-level="1" data-risk-name="baixo" data-risk-label="risco baixo" hidden>
+                <h3>Risco baixo</h3>
+                <p>Sua base está boa. Um diagnóstico ajuda a encontrar as brechas que não são visíveis no dia a dia.</p>
+              </div>
+              <div data-risk-level="30" data-risk-name="moderado" data-risk-label="risco moderado" hidden>
+                <h3>Risco moderado</h3>
+                <p>Há pontos de atenção que podem virar incidentes. Recomendamos corrigir nos próximos 30 dias.</p>
+              </div>
+              <div data-risk-level="55" data-risk-name="alto" data-risk-label="risco alto" hidden>
+                <h3>Risco alto</h3>
+                <p>Sua empresa está vulnerável a ataques comuns, como ransomware e invasão por acesso remoto. Priorize a correção.</p>
+              </div>
+              <div data-risk-level="80" data-risk-name="critico" data-risk-label="risco crítico" hidden>
+                <h3>Risco crítico</h3>
+                <p>A chance de um incidente sério é alta. Fale com um engenheiro hoje mesmo para montar um plano de contenção.</p>
+              </div>
+            </div>
+            <a class="btn btn--accent btn--block" href="#contato" data-risk-cta data-prefill="">Receber plano de correção gratuito <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="quiz__privacy"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>Nada é enviado: o cálculo acontece no seu navegador.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="section section--alt" id="servicos" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="mono-label"><span aria-hidden="true">02</span> serviços</p>
+          <h2 id="services-title">Infraestrutura completa, gerenciada por quem entende de segurança</h2>
+        </header>
+        <div class="services">
+          <article class="service" data-reveal>
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>Firewall gerenciado</h3>
+            <p>Implantação e gestão de firewalls como pfSense, OPNsense e FortiGate, com filtro de conteúdo, IPS e regras revisadas todo mês.</p>
+          </article>
+          <article class="service" data-reveal style="--delay: .05s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg></span>
+            <h3>Servidores locais e em nuvem</h3>
+            <p>Instalação, migração e administração de servidores Windows e Linux, on-premise ou em AWS, Azure e Google Cloud.</p>
+          </article>
+          <article class="service" data-reveal style="--delay: .1s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg></span>
+            <h3>VPN e redes</h3>
+            <p>Conexão segura entre matriz, filiais e home office, com redes Wi-Fi separadas para equipe e visitantes.</p>
+          </article>
+          <article class="service" data-reveal>
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-archive"/></svg></span>
+            <h3>Backup e recuperação</h3>
+            <p>Backups automáticos na regra 3-2-1, cópia imutável contra ransomware e testes de restauração documentados.</p>
+          </article>
+          <article class="service" data-reveal style="--delay: .05s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-pulse"/></svg></span>
+            <h3>Monitoramento 24/7</h3>
+            <p>NOC próprio acompanhando disponibilidade, desempenho e alertas de segurança — agindo antes que o problema chegue ao usuário.</p>
+          </article>
+          <article class="service" data-reveal style="--delay: .1s">
+            <span class="service__icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
+            <h3>Segurança e LGPD</h3>
+            <p>Hardening, gestão de acessos, autenticação em dois fatores e políticas alinhadas à LGPD, com evidências para auditoria.</p>
+          </article>
+        </div>
+
+        <div class="also" data-reveal>
+          <h3 class="also__title">Também cuidamos do software que roda na sua infraestrutura</h3>
+          <ul class="also__list" role="list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg><span><strong>Desenvolvimento de sistemas</strong>Sistemas web e integrações sob medida, que já nascem com boas práticas de segurança.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg><span><strong>Manutenção de software</strong>Correções, atualizações e melhorias em sistemas existentes, com SLA.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span><strong>Apps e APIs</strong>Aplicativos iOS e Android e APIs protegidas, hospedados na mesma estrutura monitorada.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arquitetura -->
+    <section class="section" aria-labelledby="arch-title">
+      <div class="container arch">
+        <div class="arch__copy" data-reveal>
+          <p class="mono-label"><span aria-hidden="true">03</span> arquitetura</p>
+          <h2 id="arch-title">Proteção em camadas, do perímetro ao backup</h2>
+          <ol class="layers" role="list">
+            <li><b>Perímetro</b>Firewall com IPS bloqueia ataques antes que cheguem à sua rede.</li>
+            <li><b>Acesso</b>VPN com autenticação em dois fatores para filiais e home office.</li>
+            <li><b>Servidores</b>Atualizados, monitorados e com o mínimo de acesso necessário.</li>
+            <li><b>Recuperação</b>Backup imutável fora do local, com restauração testada todo mês.</li>
+          </ol>
+        </div>
+        <figure class="diagram" data-reveal style="--delay: .1s">
+          <svg viewBox="0 0 520 380" role="img" aria-labelledby="diagram-title diagram-desc">
+            <title id="diagram-title">Arquitetura de rede protegida pela Bastião</title>
+            <desc id="diagram-desc">O tráfego da internet passa pelo firewall gerenciado, que bloqueia ataques e libera acesso seguro aos servidores, às filiais via VPN e à nuvem.</desc>
+            <g class="diagram__links">
+              <path id="rota-internet" d="M108 190H172"/>
+              <path id="rota-servidores" d="M268 190C320 190 320 70 372 70"/>
+              <path id="rota-vpn" d="M268 190H372"/>
+              <path id="rota-nuvem" d="M268 190C320 190 320 310 372 310"/>
+            </g>
+            <g class="diagram__node diagram__node--out" transform="translate(60 190)">
+              <rect x="-48" y="-32" width="96" height="64" rx="16"/>
+              <use href="#i-globe" x="-14" y="-14" width="28" height="28"/>
+              <text y="58">Internet</text>
+            </g>
+            <g class="diagram__node diagram__node--fw" transform="translate(220 190)">
+              <rect x="-48" y="-32" width="96" height="64" rx="16"/>
+              <use href="#i-shield" x="-14" y="-14" width="28" height="28"/>
+              <text y="58">Firewall</text>
+            </g>
+            <g class="diagram__node" transform="translate(420 70)">
+              <rect x="-48" y="-32" width="96" height="64" rx="16"/>
+              <use href="#i-server" x="-14" y="-14" width="28" height="28"/>
+              <text y="58">Servidores</text>
+            </g>
+            <g class="diagram__node" transform="translate(420 190)">
+              <rect x="-48" y="-32" width="96" height="64" rx="16"/>
+              <use href="#i-network" x="-14" y="-14" width="28" height="28"/>
+              <text y="58">Filiais · VPN</text>
+            </g>
+            <g class="diagram__node" transform="translate(420 310)">
+              <rect x="-48" y="-32" width="96" height="64" rx="16"/>
+              <use href="#i-cloud" x="-14" y="-14" width="28" height="28"/>
+              <text y="58">Nuvem</text>
+            </g>
+            <g class="diagram__packets">
+              <circle class="pkt pkt--bad" r="5"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#rota-internet"/></animateMotion></circle>
+              <circle class="pkt pkt--bad" r="5"><animateMotion dur="1.8s" begin="0.9s" repeatCount="indefinite"><mpath href="#rota-internet"/></animateMotion></circle>
+              <circle class="pkt pkt--ok" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#rota-servidores"/></animateMotion></circle>
+              <circle class="pkt pkt--ok" r="4"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#rota-vpn"/></animateMotion></circle>
+              <circle class="pkt pkt--ok" r="4"><animateMotion dur="2.4s" begin="1.6s" repeatCount="indefinite"><mpath href="#rota-nuvem"/></animateMotion></circle>
+            </g>
+          </svg>
+          <figcaption><span class="legend legend--bad"></span>tráfego bloqueado <span class="legend legend--ok"></span>tráfego liberado</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="section section--alt" id="como-funciona" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="mono-label"><span aria-hidden="true">04</span> como funciona</p>
+          <h2 id="how-title">Da avaliação ao monitoramento, sem parar sua operação</h2>
+        </header>
+        <ol class="flow" role="list">
+          <li data-reveal>
+            <span class="flow__step">passo_01</span>
+            <h3>Diagnóstico e inventário</h3>
+            <p>Mapeamos equipamentos, servidores, acessos e vulnerabilidades. Você recebe um relatório com riscos priorizados.</p>
+          </li>
+          <li data-reveal style="--delay: .06s">
+            <span class="flow__step">passo_02</span>
+            <h3>Projeto de arquitetura</h3>
+            <p>Desenhamos a solução ideal para seu porte e orçamento — on-premise, nuvem ou híbrida.</p>
+          </li>
+          <li data-reveal style="--delay: .12s">
+            <span class="flow__step">passo_03</span>
+            <h3>Implantação sem paradas</h3>
+            <p>Mudanças executadas em janelas noturnas ou fins de semana, sempre com plano de retorno.</p>
+          </li>
+          <li data-reveal style="--delay: .18s">
+            <span class="flow__step">passo_04</span>
+            <h3>Gestão contínua</h3>
+            <p>Monitoramento 24/7, atualizações, suporte e relatório mensal de segurança para a diretoria.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Cases e depoimentos -->
+    <section class="section" aria-labelledby="cases-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="mono-label"><span aria-hidden="true">05</span> resultados</p>
+          <h2 id="cases-title">Resultados em ambientes reais</h2>
+        </header>
+        <div class="cases">
+          <article class="case" data-reveal>
+            <p class="case__meta">Indústria · 180 colaboradores</p>
+            <p class="case__metric">0 <span>dados perdidos</span></p>
+            <p>Ransomware contido em 40 minutos graças ao backup imutável implantado três meses antes.</p>
+          </article>
+          <article class="case" data-reveal style="--delay: .06s">
+            <p class="case__meta">Rede de clínicas · 12 unidades</p>
+            <p class="case__metric">−72% <span>chamados de rede</span></p>
+            <p>VPN entre todas as unidades e prontuário centralizado em nuvem, com acesso por dois fatores.</p>
+          </article>
+          <article class="case" data-reveal style="--delay: .12s">
+            <p class="case__meta">Escritório contábil · 45 colaboradores</p>
+            <p class="case__metric">99,99% <span>disponibilidade</span></p>
+            <p>Servidor local migrado para a nuvem, com firewall gerenciado e home office seguro.</p>
+          </article>
+        </div>
+
+        <div class="quotes">
+          <figure class="quote" data-reveal>
+            <blockquote><p>“Em uma madrugada de domingo o firewall bloqueou um ataque, e o plantão da Bastião já tinha agido antes de chegarmos ao escritório.”</p></blockquote>
+            <figcaption><strong>Eduardo Ramos</strong> Gerente de TI · Metalúrgica Santa Rita</figcaption>
+          </figure>
+          <figure class="quote" data-reveal style="--delay: .08s">
+            <blockquote><p>“Migramos tudo para a nuvem em um fim de semana. Na segunda-feira a equipe nem percebeu a mudança — só que ficou mais rápido.”</p></blockquote>
+            <figcaption><strong>Luciana Freitas</strong> Sócia-diretora · Freitas Contabilidade</figcaption>
+          </figure>
+        </div>
+
+        <div class="tech" data-reveal>
+          <p class="tech__label">Trabalhamos com</p>
+          <ul class="tech__list" role="list">
+            <li>pfSense</li><li>OPNsense</li><li>FortiGate</li><li>MikroTik</li><li>Ubiquiti</li><li>Windows Server</li><li>Linux</li><li>Proxmox</li><li>VMware</li><li>AWS</li><li>Microsoft Azure</li><li>Google Cloud</li><li>Veeam</li><li>Zabbix</li><li>Grafana</li><li>Wazuh</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <header class="section-head" data-reveal>
+          <p class="mono-label"><span aria-hidden="true">06</span> dúvidas</p>
+          <h2 id="faq-title">Perguntas frequentes</h2>
+          <p>Sua dúvida não está aqui? <a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Basti%C3%A3o%20e%20quero%20falar%20com%20um%20engenheiro%20sobre%20minha%20infraestrutura." target="_blank" rel="noopener" data-track="faq">Pergunte a um engenheiro</a>.</p>
+        </header>
+        <div class="faq">
+          <details name="faq">
+            <summary>Vocês atendem empresas de qual porte?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>De 10 a 500 colaboradores, em qualquer região do Brasil. Monitoramento e suporte são remotos; implantações físicas são feitas por técnicos próprios ou parceiros locais.</p>
+          </details>
+          <details name="faq">
+            <summary>Preciso comprar equipamentos novos?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Nem sempre. No diagnóstico avaliamos o que pode ser aproveitado. Quando um firewall físico é necessário, indicamos opções para o seu porte — ou usamos firewall virtual.</p>
+          </details>
+          <details name="faq">
+            <summary>Quanto tempo leva a implantação de um firewall?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Em ambientes de até 50 usuários, normalmente de 1 a 2 semanas entre projeto e implantação, com a virada feita fora do horário comercial.</p>
+          </details>
+          <details name="faq">
+            <summary>Como funciona o atendimento em caso de incidente?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Incidentes críticos são detectados pelo monitoramento ou abertos pelo seu time a qualquer hora. A primeira resposta acontece em até 15 minutos, 24 horas por dia.</p>
+          </details>
+          <details name="faq">
+            <summary>Vocês ajudam com a LGPD?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Ajudamos na parte técnica: controle de acessos, registros (logs), criptografia, backup e resposta a incidentes — itens exigidos pela lei e cobrados em auditorias.</p>
+          </details>
+          <details name="faq">
+            <summary>Posso contratar só o monitoramento?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Sim. Também atendemos empresas com TI interna, complementando a equipe com monitoramento 24/7 e plantão para incidentes.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section contact" id="contato" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__copy" data-reveal>
+          <p class="mono-label"><span aria-hidden="true">07</span> diagnóstico gratuito</p>
+          <h2 id="contact-title">Agende seu diagnóstico de segurança gratuito</h2>
+          <p>Um engenheiro analisa sua rede, seus servidores e seus backups e entrega um relatório com riscos e prioridades. Sem custo e sem compromisso.</p>
+          <ul class="contact__list" role="list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Relatório entregue em até 5 dias úteis</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Análise feita por engenheiro, não por vendedor</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Confidencialidade garantida por NDA</li>
+          </ul>
+        </div>
+
+        <div class="form-shell">
+          <form class="lead-form" id="form-diagnostico" method="post" data-lead-form data-wa-intro="Olá! Agendei um diagnóstico de segurança pelo site da Bastião.">
+            <div class="field">
+              <label for="c-nome">Nome *</label>
+              <input id="c-nome" name="nome" type="text" autocomplete="name" required>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="c-email">E-mail corporativo *</label>
+                <input id="c-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="c-whats">WhatsApp *</label>
+                <input id="c-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" pattern="[0-9()+ .\-]{10,20}" data-mask="phone" required>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="c-empresa">Empresa *</label>
+                <input id="c-empresa" name="empresa" type="text" autocomplete="organization" required>
+              </div>
+              <div class="field">
+                <label for="c-porte">Nº de colaboradores *</label>
+                <select id="c-porte" name="colaboradores" required>
+                  <option value="">Selecione</option>
+                  <option>Até 20</option>
+                  <option>21 a 50</option>
+                  <option>51 a 200</option>
+                  <option>Mais de 200</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="c-necessidade">Principal necessidade *</label>
+              <select id="c-necessidade" name="necessidade" required>
+                <option value="">Selecione</option>
+                <option>Firewall e segurança de rede</option>
+                <option>Servidores e nuvem</option>
+                <option>Backup e recuperação</option>
+                <option>Monitoramento 24/7</option>
+                <option>VPN e home office</option>
+                <option>Desenvolvimento ou manutenção de sistemas</option>
+                <option>Aplicativos e APIs</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="c-msg">Mensagem <span>(opcional)</span></label>
+              <textarea id="c-msg" name="mensagem" rows="4"></textarea>
+            </div>
+            <button class="btn btn--accent btn--block" type="submit">Agendar diagnóstico <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form-note"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Dados usados apenas para retornar seu contato (<a href="#privacidade">privacidade</a>).</span></p>
+
+            <div class="form-success" data-form-success hidden>
+              <p class="mono-label">status: recebido</p>
+              <h3>Diagnóstico solicitado<span data-success-name></span>!</h3>
+              <p>Um engenheiro vai entrar em contato em até 1 dia útil para agendar a análise. Se estiver com um incidente agora, fale direto com o plantão:</p>
+              <a class="btn btn--accent" href="https://wa.me/5511900000000" target="_blank" rel="noopener" data-success-whatsapp data-track="sucesso-formulario">
+                <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg> Continuar no WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <a class="wa-float" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Basti%C3%A3o%20e%20quero%20falar%20com%20um%20engenheiro%20sobre%20minha%20infraestrutura." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" data-track="botao-flutuante">
+      <svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <a class="brand" href="#topo" aria-label="Bastião Infra e Segurança — voltar ao topo">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path class="brand__wall" d="M6 5h4v3h4V5h4v3h4V5h4v9c0 7-4.5 11.5-10 13.5C10.5 25.5 6 21 6 14z"/>
+            <circle class="brand__hole" cx="16" cy="13.5" r="2.3"/>
+            <path class="brand__hole" d="M14.9 14.5h2.2V19h-2.2z"/>
+          </svg>
+          <span class="brand__name">Bastião<small>infra &amp; segurança</small></span>
+        </a>
+        <p class="site-footer__about">Servidores, firewall, redes e backup gerenciados, com monitoramento 24/7 para empresas de todo o Brasil.</p>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Contato</h2>
+        <ul role="list">
+          <li><a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Basti%C3%A3o%20e%20quero%20falar%20com%20um%20engenheiro%20sobre%20minha%20infraestrutura." target="_blank" rel="noopener" data-track="rodape">(11) 90000-0000 · plantão 24/7</a></li>
+          <li><a href="mailto:noc@bastiao.example">noc@bastiao.example</a></li>
+          <li>Rua Exemplo, 789 — Curitiba/PR</li>
+        </ul>
+      </div>
+      <div id="privacidade">
+        <h2 class="site-footer__title">Privacidade</h2>
+        <p>As informações enviadas são usadas apenas para responder ao seu contato e tratadas conforme a LGPD.</p>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© <span data-year>2026</span> Bastião Infra &amp; Segurança Ltda. · CNPJ 00.000.000/0001-00</p>
+      <p>Página demonstrativa: empresa, números e depoimentos fictícios. <a href="../../index.html">Voltar ao catálogo</a></p>
+    </div>
+  </footer>
+</body>
+</html>

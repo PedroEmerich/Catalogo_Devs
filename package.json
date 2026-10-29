@@ -1,0 +1,12 @@
+{
+  "name": "catalogo-devs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Catálogo de landing pages para empresas de desenvolvimento de software.",
+  "scripts": {
+    "previews": "node scripts/capturar-previews.js"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
