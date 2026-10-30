@@ -6,13 +6,20 @@ Catálogo de landing pages para empresas de desenvolvimento de software: **dois 
 
 | # | Modelo | Estilo | Destaques | Visual |
 |---|--------|--------|-----------|--------|
-| 01 | [Bastião Tecnologia & Segurança](landing-pages/bastiao/index.html) | Técnica e escura | Terminal animado, autodiagnóstico com sinais das quatro frentes e diagrama de como tudo se conecta | Escuro técnico, verde terminal · Space Grotesk + IBM Plex + JetBrains Mono |
+| 01 | [Bastião Tecnologia & Segurança](landing-pages/bastiao/index.html) | Técnica e escura | Escudo que segue o cursor e bloqueia ameaças no hero, retícula de mira, títulos que se decriptam, diagrama energizado pela rolagem e autodiagnóstico | Escuro técnico, verde terminal · Space Grotesk + IBM Plex + JetBrains Mono |
 | 02 | [SBC Dev](https://pedroemerich.github.io/MeAndMyCompany/) | Página real e publicada | Globo 3D de partículas no hero, seis especialidades, linha do tempo da trajetória e contato por WhatsApp e e-mail | Escuro com azul, ciano e violeta · Space Grotesk + JetBrains Mono |
-| 03 | [Vetor Software House](landing-pages/vetor/index.html) | Suíça e assertiva | Orçamento em 3 etapas no hero, serviços em abas, modelos de contratação e números em destaque | Suíço/brutalista, azul elétrico e lima · Archivo |
+| 03 | [Vetor Software House](landing-pages/vetor/index.html) | Suíça e assertiva | Título elástico que reage ao cursor, grade suíça de 12 colunas, índices gigantes esticados pela rolagem, orçamento em 3 etapas e serviços em abas | Suíço/brutalista, azul elétrico e lima · Archivo |
 
 A página inicial ([`index.html`](index.html)) é a vitrine: mostra as prévias, as características de cada modelo e permite ver cada página em desktop, tablet e celular sem sair do catálogo.
 
 > A SBC Dev é uma empresa real; o código da página fica no repositório [MeAndMyCompany](https://github.com/PedroEmerich/meandmycompany) e o catálogo só aponta para o endereço publicado. Já Bastião e Vetor são **fictícias**: empresas, números, cases, depoimentos, telefones (`(11) 90000-0000`) e e-mails (`@*.example`) servem apenas como demonstração. Esses modelos vêm com `<meta name="robots" content="noindex">` para não aparecerem no Google enquanto forem demonstrações.
+
+## Interações de scroll e cursor
+
+Bastião e Vetor têm uma camada de interações própria em `landing-pages/<modelo>/fx.js`, puramente decorativa. Sem esse arquivo, sem JavaScript ou com “reduzir movimento” ativado no sistema, a página continua completa e estática. Efeitos de cursor só aparecem com mouse; no celular ficam os efeitos de rolagem.
+
+- **Bastião — o cursor é o firewall:** campo de rede no hero em que ameaças vindas das bordas são bloqueadas por um escudo que segue o cursor (sem mouse, ele protege o terminal), retícula de mira que trava nos botões e links, trilho lateral de varredura com a seção atual, títulos que se decriptam ao aparecer, luz que acompanha o cursor nos cartões, terminal com inclinação 3D, botões magnéticos e diagrama cujas rotas se energizam com a rolagem.
+- **Vetor — tipografia e grade suíça:** letras do título que se alargam e engrossam perto do cursor (eixos de largura e peso da Archivo), grade de 12 colunas que destaca a coluna sob o cursor, índices gigantes vazados que se esticam com a rolagem, cursor em *difference*, faixa de segmentos guiada pela velocidade da rolagem, revelações em *wipe*, barra de progresso no cabeçalho e preenchimento lima que nasce do ponto onde o cursor entrou nos cartões.
 
 ## Como visualizar
 
@@ -42,6 +49,7 @@ landing-pages/
   bastiao/   vetor/
     index.html              conteúdo da página
     style.css               identidade visual (variáveis no topo)
+    fx.js                   interações de scroll e cursor (opcional)
 scripts/capturar-previews.js  regenera as imagens de assets/previews
 ```
 

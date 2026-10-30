@@ -1581,3 +1581,253 @@ html:not(.js) .nav-toggle {
     grid-template-columns: 1.4fr 1fr 1.2fr;
   }
 }
+
+/* ==========================================================================
+   Interações (fx.js) — só existem com JS e quando o visitante aceita movimento
+   ========================================================================== */
+
+/* Hero: campo de rede em canvas e contador de bloqueios */
+.fx-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.fx-hud {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  translate: -50% 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.fx-hud i {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.fx-hud b {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Terminal inclina na direção do cursor (e sobe um pouco na rolagem, sem mouse) */
+.fx .terminal {
+  transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--py, 0px));
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Botões magnéticos */
+.fx .btn--accent {
+  translate: var(--tx, 0px) var(--ty, 0px);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    translate 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Retícula de mira: segue o cursor e trava nos elementos clicáveis */
+.fx-reticle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.fx-reticle.is-hidden {
+  opacity: 0;
+}
+
+.fx-reticle i {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--accent);
+  border-style: solid;
+  border-width: 0;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
+
+.fx-reticle i:nth-child(1) { top: 0; left: 0; border-top-width: 1.5px; border-left-width: 1.5px; }
+.fx-reticle i:nth-child(2) { top: 0; right: 0; border-top-width: 1.5px; border-right-width: 1.5px; }
+.fx-reticle i:nth-child(3) { bottom: 0; left: 0; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+.fx-reticle i:nth-child(4) { right: 0; bottom: 0; border-right-width: 1.5px; border-bottom-width: 1.5px; }
+
+.fx-reticle.is-locked i {
+  width: 12px;
+  height: 12px;
+}
+
+.fx-reticle b {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  translate: -50% -50%;
+  transition: opacity 0.2s ease;
+}
+
+.fx-reticle.is-locked b {
+  opacity: 0;
+}
+
+/* Trilho de varredura (telas largas, na margem direita) */
+.fx-rail {
+  display: none;
+}
+
+@media (min-width: 1320px) {
+  .fx-rail {
+    position: fixed;
+    top: 50%;
+    right: 16px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    translate: 0 -50%;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    pointer-events: none;
+  }
+
+  .fx-rail__pct,
+  .fx-rail__label {
+    writing-mode: vertical-rl;
+  }
+
+  .fx-rail__pct {
+    color: var(--accent);
+  }
+
+  .fx-rail__track {
+    position: relative;
+    width: 2px;
+    height: 32vh;
+    border-radius: 2px;
+    background: var(--line);
+    overflow: hidden;
+  }
+
+  .fx-rail__track i {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(var(--accent), var(--cyan));
+    box-shadow: 0 0 10px var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+}
+
+/* Luz que acompanha o cursor nos cartões */
+.fx .service,
+.fx .case,
+.fx .flow > li,
+.fx .quiz__item,
+.fx .voice,
+.fx .faq details {
+  background-image: radial-gradient(340px circle at var(--mx, -999px) var(--my, -999px), rgba(52, 211, 153, 0.09), transparent 65%);
+}
+
+/* Diagrama: rotas energizadas conforme a rolagem; nós acendem em sequência */
+.fx-energy path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--draw, 0));
+  filter: drop-shadow(0 0 4px rgba(52, 211, 153, 0.6));
+}
+
+.fx-energy .is-threat {
+  stroke: var(--danger);
+  filter: drop-shadow(0 0 4px rgba(248, 113, 113, 0.6));
+}
+
+.fx .diagram__node {
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+
+.fx .diagram__node.is-on {
+  opacity: 1;
+}
+
+.fx .diagram__packets {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.fx .diagram.is-live .diagram__packets {
+  opacity: 1;
+}
+
+/* Cabeçalho das seções: linha de varredura passa quando ele aparece */
+.fx .section-head {
+  position: relative;
+}
+
+.fx .section-head::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  width: calc(100% + 2rem);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 12px var(--accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fx .section-head.is-visible::after {
+  animation: scan-pass 1.1s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+}
+
+@keyframes scan-pass {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
