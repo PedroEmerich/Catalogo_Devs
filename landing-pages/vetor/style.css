@@ -196,12 +196,12 @@ body {
   font-size: 1.35rem;
   font-weight: 800;
   font-stretch: 125%;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   line-height: 1;
-  text-transform: uppercase;
 }
 
 .brand__name small {
+  text-transform: uppercase;
   margin-top: 0.15rem;
   font-size: 0.62rem;
   font-weight: 600;
