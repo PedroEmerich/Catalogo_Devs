@@ -5,8 +5,7 @@
  * suíça respondem ao visitante.
  *
  *  - Hero: as letras do título se alargam e engrossam perto do cursor
- *    (eixos de largura e peso da Archivo) e a grade de 12 colunas destaca
- *    a coluna em que o cursor está.
+ *    (eixos de largura e peso da Archivo), sobre uma grade de 12 colunas.
  *  - Índices gigantes vazados em cada seção, que se esticam com a rolagem.
  *  - Cursor em "difference" que inverte o que passa por baixo.
  *  - Faixa de segmentos guiada pela velocidade e direção da rolagem.
@@ -154,29 +153,8 @@
     const grid = document.createElement('div');
     grid.className = 'fx-grid';
     grid.setAttribute('aria-hidden', 'true');
-    grid.innerHTML = `${'<i></i>'.repeat(12)}<span class="fx-grid__tag">col <b>01</b> / 12</span>`;
+    grid.innerHTML = '<i></i>'.repeat(12);
     hero.prepend(grid);
-    const cols = $$('i', grid);
-    const tag = $('.fx-grid__tag b', grid);
-    let hot = -1;
-    if (fine) {
-      hero.addEventListener('pointermove', (event) => {
-        const r = grid.getBoundingClientRect();
-        const index = clamp(Math.floor(((event.clientX - r.left) / r.width) * 12), 0, 11);
-        if (index === hot) return;
-        cols[hot]?.classList.remove('is-hot');
-        cols[index].classList.add('is-hot');
-        hot = index;
-        tag.textContent = String(index + 1).padStart(2, '0');
-        grid.style.setProperty('--col', index);
-        grid.classList.add('is-tracking');
-      });
-      hero.addEventListener('pointerleave', () => {
-        cols[hot]?.classList.remove('is-hot');
-        hot = -1;
-        grid.classList.remove('is-tracking');
-      });
-    }
   }
 
   /* Cursor "difference" -------------------------------------------------- */

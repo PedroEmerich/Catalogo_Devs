@@ -19,7 +19,7 @@ A página inicial ([`index.html`](index.html)) é a vitrine: mostra as prévias,
 Bastião e Vetor têm uma camada de interações própria em `landing-pages/<modelo>/fx.js`, puramente decorativa. Sem esse arquivo, sem JavaScript ou com “reduzir movimento” ativado no sistema, a página continua completa e estática. Efeitos de cursor só aparecem com mouse; no celular ficam os efeitos de rolagem.
 
 - **Bastião — o cursor é o firewall:** campo de rede no hero em que ameaças vindas das bordas são bloqueadas por um escudo que segue o cursor (sem mouse, ele protege o terminal), retícula de mira que trava nos botões e links, trilho lateral de varredura com a seção atual, títulos que se decriptam ao aparecer, luz que acompanha o cursor nos cartões, terminal com inclinação 3D, botões magnéticos e diagrama cujas rotas se energizam com a rolagem.
-- **Vetor — tipografia e grade suíça:** letras do título que se alargam e engrossam perto do cursor (eixos de largura e peso da Archivo), grade de 12 colunas que destaca a coluna sob o cursor, índices gigantes vazados que se esticam com a rolagem, cursor em *difference*, faixa de segmentos guiada pela velocidade da rolagem, revelações em *wipe*, barra de progresso no cabeçalho e preenchimento lima que nasce do ponto onde o cursor entrou nos cartões.
+- **Vetor — tipografia e grade suíça:** letras do título que se alargam e engrossam perto do cursor (eixos de largura e peso da Archivo), grade de 12 colunas desenhada atrás do topo, índices gigantes vazados que se esticam com a rolagem, cursor em *difference*, faixa de segmentos guiada pela velocidade da rolagem, revelações em *wipe*, barra de progresso no cabeçalho e preenchimento lima que nasce do ponto onde o cursor entrou nos cartões.
 
 ## Como visualizar
 

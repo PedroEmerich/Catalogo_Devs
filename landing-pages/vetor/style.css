@@ -1511,9 +1511,6 @@ html:not(.js) .tabs__panel + .tabs__panel {
   border-left: 1px solid rgba(10, 11, 16, 0.06);
   transform-origin: top;
   animation: grid-draw 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease;
 }
 
 .fx-grid i:nth-child(odd) {
@@ -1524,29 +1521,6 @@ html:not(.js) .tabs__panel + .tabs__panel {
   animation-delay: 0.16s;
 }
 
-.fx-grid i.is-hot {
-  border-left-color: rgba(43, 59, 255, 0.4);
-  background: linear-gradient(rgba(43, 59, 255, 0.06), rgba(43, 59, 255, 0) 70%);
-}
-
-.fx-grid__tag {
-  position: absolute;
-  top: 0.9rem;
-  left: calc(var(--col, 0) * (100% / 12) + 0.5rem);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--blue);
-  opacity: 0;
-  transition:
-    left 0.25s cubic-bezier(0.2, 0.7, 0.2, 1),
-    opacity 0.2s ease;
-}
-
-.fx-grid.is-tracking .fx-grid__tag {
-  opacity: 1;
-}
 
 @keyframes grid-draw {
   from {

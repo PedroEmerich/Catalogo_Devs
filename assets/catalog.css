@@ -592,7 +592,7 @@ code {
   }
 }
 
-/* Como usar */
+/* Como funciona (atendimento em 3 passos) */
 .howto {
   padding: clamp(4rem, 8vw, 6rem) 0;
   border-top: 1px solid var(--line);
