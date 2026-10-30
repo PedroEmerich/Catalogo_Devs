@@ -10,7 +10,12 @@ const { chromium } = require('playwright');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'assets', 'previews');
-const PAGES = ['bastiao', 'vetor'];
+// Modelos do repositório e a página real da SBC Dev (capturada do endereço publicado).
+const PAGES = [
+  { slug: 'bastiao', url: pathToFileURL(path.join(ROOT, 'landing-pages', 'bastiao', 'index.html')).href },
+  { slug: 'sbc', url: 'https://pedroemerich.github.io/MeAndMyCompany/', settle: 9000 },
+  { slug: 'vetor', url: pathToFileURL(path.join(ROOT, 'landing-pages', 'vetor', 'index.html')).href },
+];
 const SHOTS = [
   { name: 'desktop', viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 / 3 }, // 960 × 600
   { name: 'mobile', viewport: { width: 390, height: 844 }, deviceScaleFactor: 0.75 }, // 293 × 633
@@ -19,8 +24,7 @@ const SHOTS = [
 (async () => {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const browser = await chromium.launch();
-  for (const slug of PAGES) {
-    const url = pathToFileURL(path.join(ROOT, 'landing-pages', slug, 'index.html')).href;
+  for (const { slug, url, settle = 0 } of PAGES) {
     for (const shot of SHOTS) {
       // Sem animações: a captura sai no estado final, igual para todo mundo.
       const page = await browser.newPage({
@@ -30,6 +34,8 @@ const SHOTS = [
       });
       await page.goto(url, { waitUntil: 'networkidle' });
       await page.evaluate(() => document.fonts.ready);
+      // A SBC Dev tem tela de carregamento e animações próprias: espera terminarem.
+      if (settle) await page.waitForTimeout(settle);
       const file = path.join(OUT_DIR, `${slug}-${shot.name}.jpg`);
       await page.screenshot({ path: file, type: 'jpeg', quality: 82 });
       console.log(`✓ ${path.relative(ROOT, file)}`);

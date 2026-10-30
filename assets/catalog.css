@@ -206,7 +206,7 @@ code {
   align-items: center;
 }
 
-/* Leque com as duas prévias ao lado do título (só em telas largas). */
+/* Leque com as três prévias ao lado do título (só em telas largas). */
 .stack {
   display: none;
 }
@@ -230,8 +230,9 @@ code {
     box-shadow: 0 30px 50px -28px rgba(0, 0, 0, 0.45);
   }
 
-  .stack img:nth-child(1) { top: 20px; left: 0; rotate: -5deg; }
-  .stack img:nth-child(2) { top: 130px; left: 22%; rotate: 4deg; }
+  .stack img:nth-child(1) { top: 0; left: 0; rotate: -6deg; }
+  .stack img:nth-child(2) { top: 80px; left: 12%; rotate: 0deg; }
+  .stack img:nth-child(3) { top: 160px; left: 24%; rotate: 6deg; }
 }
 
 .fronts li {
@@ -274,6 +275,12 @@ code {
   --brand-soft: #0f1829;
 }
 
+.lp-card--sbc {
+  --brand: #1d4ed8;
+  --brand-text: #1d4ed8;
+  --brand-soft: #0b1424;
+}
+
 .lp-card--vetor {
   --brand: #2b3bff;
   --brand-text: #2b3bff;
@@ -286,6 +293,13 @@ code {
     --brand-ink: #04271a;
     --brand-text: #34d399;
     --brand-soft: #0b1220;
+  }
+
+  .lp-card--sbc {
+    --brand: #3b82f6;
+    --brand-ink: #04060c;
+    --brand-text: #7dd3fc;
+    --brand-soft: #0b1424;
   }
 
   .lp-card--vetor {

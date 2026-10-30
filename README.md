@@ -1,17 +1,18 @@
 # Catálogo Devs
 
-Catálogo com **2 landing pages** para empresas de desenvolvimento de software, pensadas para campanhas de Google Ads.
+Catálogo de landing pages para empresas de desenvolvimento de software: **dois modelos** prontos para campanhas de Google Ads e a **página real da SBC Dev**.
 
-**As duas páginas trazem as quatro frentes completas — desenvolvimento, manutenção, servidores e firewall e aplicativos — com o mesmo peso:** descrição, entregas, botão de orçamento que já seleciona o serviço no formulário e respostas no FAQ para cada uma. Nenhuma página é dedicada a um serviço só; o que muda entre elas é a identidade visual, o tom e os recursos de conversão.
+**Os dois modelos trazem as quatro frentes completas — desenvolvimento, manutenção, servidores e firewall e aplicativos — com o mesmo peso:** descrição, entregas, botão de orçamento que já seleciona o serviço no formulário e respostas no FAQ para cada uma. Nenhum modelo é dedicado a um serviço só; o que muda entre elas é a identidade visual, o tom e os recursos de conversão.
 
 | # | Modelo | Estilo | Destaques | Visual |
 |---|--------|--------|-----------|--------|
 | 01 | [Bastião Tecnologia & Segurança](landing-pages/bastiao/index.html) | Técnica e escura | Terminal animado, autodiagnóstico com sinais das quatro frentes e diagrama de como tudo se conecta | Escuro técnico, verde terminal · Space Grotesk + IBM Plex + JetBrains Mono |
-| 02 | [Vetor Software House](landing-pages/vetor/index.html) | Suíça e assertiva | Orçamento em 3 etapas no hero, serviços em abas, modelos de contratação e números em destaque | Suíço/brutalista, azul elétrico e lima · Archivo |
+| 02 | [SBC Dev](https://pedroemerich.github.io/MeAndMyCompany/) | Página real e publicada | Globo 3D de partículas no hero, seis especialidades, linha do tempo da trajetória e contato por WhatsApp e e-mail | Escuro com azul, ciano e violeta · Space Grotesk + JetBrains Mono |
+| 03 | [Vetor Software House](landing-pages/vetor/index.html) | Suíça e assertiva | Orçamento em 3 etapas no hero, serviços em abas, modelos de contratação e números em destaque | Suíço/brutalista, azul elétrico e lima · Archivo |
 
 A página inicial ([`index.html`](index.html)) é a vitrine: mostra as prévias, as características de cada modelo e permite ver cada página em desktop, tablet e celular sem sair do catálogo.
 
-> Todas as empresas, números, cases, depoimentos, telefones (`(11) 90000-0000`) e e-mails (`@*.example`) são **fictícios** e servem apenas como demonstração. As landing pages vêm com `<meta name="robots" content="noindex">` para não aparecerem no Google enquanto forem demonstrações.
+> A SBC Dev é uma empresa real; o código da página fica no repositório [MeAndMyCompany](https://github.com/PedroEmerich/meandmycompany) e o catálogo só aponta para o endereço publicado. Já Bastião e Vetor são **fictícias**: empresas, números, cases, depoimentos, telefones (`(11) 90000-0000`) e e-mails (`@*.example`) servem apenas como demonstração. Esses modelos vêm com `<meta name="robots" content="noindex">` para não aparecerem no Google enquanto forem demonstrações.
 
 ## Como visualizar
 
@@ -44,7 +45,7 @@ landing-pages/
 scripts/capturar-previews.js  regenera as imagens de assets/previews
 ```
 
-## O que toda landing page inclui
+## O que os modelos incluem
 
 - **As quatro frentes completas:** seção de serviços com desenvolvimento, manutenção, servidores e firewall e aplicativos, cada um com entregas e botão que já marca o serviço no formulário; campo “Serviço de interesse” com as quatro opções e “Mais de um serviço”; FAQ cobrindo todas as frentes.
 - **Palavras-chave das buscas** na headline e nas seções (software sob medida, manutenção de sistemas, firewall gerenciado, desenvolvimento de aplicativos), então qualquer grupo de anúncios pode apontar para qualquer modelo.
