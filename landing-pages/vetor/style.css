@@ -9,13 +9,13 @@
   --ink-soft: #3a3d4a;
   --muted: #5b5f6e;
   --line: #e3e5ec;
-  --blue: #c2410c;
-  --blue-strong: #9a3412;
-  --blue-soft: #ffedd5;
-  --lime: #fdba74;
+  --blue: #8a6100;
+  --blue-strong: #6b4b00;
+  --blue-soft: #fff4d6;
+  --lime: #f2c14e;
   --on-dark-muted: #c3c6d3;
   --danger: #c81e1e;
-  --focus: #c2410c;
+  --focus: #8a6100;
   --font: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --radius: 6px;
   --container: 1240px;
@@ -185,20 +185,10 @@ body {
   text-decoration: none;
 }
 
+/* Logo (G dourado com capelo) */
 .brand__mark {
-  width: 34px;
-  height: 34px;
-}
-
-.brand__mark rect {
-  fill: var(--blue);
-}
-
-.brand__mark path {
-  fill: none;
-  stroke: var(--lime);
-  stroke-width: 3.2;
-  stroke-linecap: square;
+  width: auto;
+  height: 38px;
 }
 
 .brand__name {
@@ -650,7 +640,7 @@ html:not(.js) .step + .step {
 .field :is(input, select, textarea):focus {
   outline: none;
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.18);
+  box-shadow: 0 0 0 3px rgba(138, 97, 0, 0.2);
 }
 
 .field [aria-invalid='true'] {
@@ -1543,7 +1533,7 @@ html:not(.js) .tabs__panel + .tabs__panel {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #15a7f3; /* complemento: sobre o branco o "difference" fica laranja */
+  background: #1d4ae0; /* complemento: sobre o branco o "difference" fica dourado */
   mix-blend-mode: difference;
   pointer-events: none;
   transition: opacity 0.2s ease;

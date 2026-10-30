@@ -6,8 +6,9 @@
 <title>SBC Dev — Engenharia de Software Sob Medida</title>
 <meta name="description" content="SBC Dev — engenharia de software sob medida. Full stack, mobile, banco de dados e modernização de sistemas. São Bernardo do Campo, SP.">
 <meta name="theme-color" content="#04060c">
-<!-- Cópia de demonstração (tema laranja) da página publicada em pedroemerich.github.io/MeAndMyCompany. -->
+<!-- Cópia de demonstração (tema dourado) da página publicada em pedroemerich.github.io/MeAndMyCompany. -->
 <meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="../../assets/shared/logo-g-64.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,11 +19,11 @@
   --fg:#e9eefb;
   --muted:#8792ad;
   --dim:#4a5470;
-  --blue:#f97316;
-  --cyan:#fbbf24;
-  --violet:#f0532a;
-  --line:rgba(220,175,145,.12);
-  --line-2:rgba(220,175,145,.22);
+  --blue:#e8b53a;
+  --cyan:#fde68a;
+  --violet:#c8901a;
+  --line:rgba(215,190,140,.12);
+  --line-2:rgba(215,190,140,.22);
   --glass:rgba(10,15,30,.55);
   --pad:clamp(16px,4vw,56px);
   --mono:'JetBrains Mono',ui-monospace,monospace;
@@ -77,8 +78,9 @@ body.has-cursor,body.has-cursor a,body.has-cursor button{cursor:none}
 .nav.scrolled{padding-top:12px;padding-bottom:12px;background:rgba(4,6,12,.6);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-color:var(--line)}
 .logo{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.06em;font-size:15px}
 .logo-mark{width:34px;height:34px;position:relative;perspective:200px}
+.logo-img{display:block;width:auto;height:34px}
 .logo-cube{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:spin 9s linear infinite}
-.logo-cube b{position:absolute;inset:0;border:1px solid var(--cyan);background:rgba(251,191,36,.06)}
+.logo-cube b{position:absolute;inset:0;border:1px solid var(--cyan);background:rgba(253,230,138,.06)}
 .logo-cube b:nth-child(1){transform:translateZ(17px)}
 .logo-cube b:nth-child(2){transform:rotateY(90deg) translateZ(17px)}
 .logo-cube b:nth-child(3){transform:rotateY(180deg) translateZ(17px)}
@@ -92,7 +94,7 @@ body.has-cursor,body.has-cursor a,body.has-cursor button{cursor:none}
 .nav-links a:hover{color:var(--fg)}
 .nav-links a::before{content:attr(data-idx);color:var(--cyan);margin-right:8px;font-size:10px}
 .nav-cta{font-family:var(--mono);font-size:12px;letter-spacing:.14em;padding:11px 18px;border:1px solid var(--line-2);border-radius:100px;display:inline-flex;gap:10px;align-items:center;transition:border-color .3s,background .3s}
-.nav-cta:hover{border-color:var(--cyan);background:rgba(251,191,36,.08)}
+.nav-cta:hover{border-color:var(--cyan);background:rgba(253,230,138,.08)}
 .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 2s infinite}
 @keyframes ping{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 
@@ -108,7 +110,7 @@ section{position:relative}
 .btn{position:relative;display:inline-flex;align-items:center;gap:14px;padding:18px 28px;border-radius:100px;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;overflow:hidden;isolation:isolate;transition:color .4s}
 .btn .arrow{width:18px;height:18px;transition:transform .4s}
 .btn:hover .arrow{transform:translateX(4px) rotate(-45deg)}
-.btn.primary{background:linear-gradient(120deg,var(--blue),#ea580c 50%,var(--cyan));color:#fff;box-shadow:0 10px 40px -10px rgba(249,115,22,.7),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn.primary{background:linear-gradient(120deg,var(--blue),#b8860b 50%,var(--cyan));color:#1a1203;box-shadow:0 10px 40px -10px rgba(232,181,58,.7),inset 0 1px 0 rgba(255,255,255,.25)}
 .btn.primary::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-100%);transition:transform .8s}
 .btn.primary:hover::after{transform:translateX(100%)}
 .btn.ghost{border:1px solid var(--line-2);color:var(--fg);backdrop-filter:blur(8px)}
@@ -158,12 +160,12 @@ section{position:relative}
 .cards{margin-top:72px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;perspective:1400px}
 .card{position:relative;transform-style:preserve-3d}
 .card-inner{position:relative;height:100%;padding:34px 30px 30px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(15,22,42,.78),rgba(6,9,18,.85));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transform-style:preserve-3d;overflow:hidden;--mx:50%;--my:50%}
-.card-inner::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(251,191,36,.16),transparent 45%);opacity:0;transition:opacity .4s}
+.card-inner::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(253,230,138,.16),transparent 45%);opacity:0;transition:opacity .4s}
 .card-inner::after{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;padding:1px;background:radial-gradient(260px circle at var(--mx) var(--my),var(--cyan),transparent 60%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
 .card:hover .card-inner::before,.card:hover .card-inner::after{opacity:1}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;transform:translateZ(40px)}
 .card-num{font-family:var(--mono);font-size:12px;color:var(--cyan);letter-spacing:.14em}
-.card-icon{width:52px;height:52px;border-radius:14px;border:1px solid var(--line-2);display:grid;place-items:center;background:rgba(249,115,22,.08);color:var(--cyan)}
+.card-icon{width:52px;height:52px;border-radius:14px;border:1px solid var(--line-2);display:grid;place-items:center;background:rgba(232,181,58,.08);color:var(--cyan)}
 .card-icon svg{width:24px;height:24px}
 .card h3{margin-top:56px;font-size:24px;font-weight:500;letter-spacing:-.02em;line-height:1.15;transform:translateZ(30px)}
 .card p{margin-top:14px;color:var(--muted);font-size:15px;font-weight:300;transform:translateZ(18px)}
@@ -187,7 +189,7 @@ section{position:relative}
 .j-panel{width:min(78vw,820px);height:100%;flex:none;padding:clamp(150px,22vh,220px) var(--pad) 60px;display:flex;flex-direction:column;justify-content:center;position:relative}
 .j-panel.intro{width:min(90vw,760px)}
 .j-panel + .j-panel:not(.intro)::before{content:"";position:absolute;left:var(--pad);top:clamp(96px,14vh,140px);width:11px;height:11px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--bg);border:1px solid var(--cyan);box-shadow:0 0 18px var(--cyan)}
-.j-year{font-size:clamp(110px,17vw,260px);font-weight:700;line-height:.8;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.2px rgba(255,190,140,.45);position:relative}
+.j-year{font-size:clamp(110px,17vw,260px);font-weight:700;line-height:.8;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.2px rgba(240,210,140,.45);position:relative}
 .j-year::after{content:attr(data-y);position:absolute;inset:0;color:var(--fg);-webkit-text-stroke:0;clip-path:inset(0 100% 0 0);background:linear-gradient(100deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;transition:clip-path 1.2s cubic-bezier(.2,.8,.2,1)}
 .j-panel.active .j-year::after{clip-path:inset(0 0 0 0)}
 .j-panel h3{margin-top:30px;font-size:clamp(26px,2.6vw,38px);font-weight:500;letter-spacing:-.02em}
@@ -204,7 +206,7 @@ section{position:relative}
 .contact-strip{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--glass);backdrop-filter:blur(12px);text-align:left}
 .contact-strip a{padding:28px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:8px;transition:background .3s}
 .contact-strip a:first-child{border-left:0}
-.contact-strip a:hover{background:rgba(251,191,36,.06)}
+.contact-strip a:hover{background:rgba(253,230,138,.06)}
 .contact-strip .k{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--cyan)}
 .contact-strip .v{font-size:17px;word-break:break-all}
 
@@ -275,7 +277,7 @@ footer{border-top:1px solid var(--line);background:rgba(3,4,9,.9);padding:64px 0
 
 <header class="nav">
   <a href="#top" class="logo" aria-label="SBC Dev — início">
-    <div class="logo-mark"><div class="logo-cube"><b></b><b></b><b></b><b></b><b></b><b></b></div></div>
+    <img class="logo-img" src="../../assets/shared/logo-g-dark.png" alt="" width="41" height="34">
     <span>SBC<em>.</em>DEV</span>
   </a>
   <nav class="nav-links" aria-label="Principal">
@@ -456,7 +458,7 @@ footer{border-top:1px solid var(--line);background:rgba(3,4,9,.9);padding:64px 0
   <div class="wrap">
     <div class="f-grid">
       <div>
-        <a href="#top" class="logo"><div class="logo-mark"><div class="logo-cube"><b></b><b></b><b></b><b></b><b></b><b></b></div></div><span>SBC<em>.</em>DEV</span></a>
+        <a href="#top" class="logo"><img class="logo-img" src="../../assets/shared/logo-g-dark.png" alt="" width="41" height="34"><span>SBC<em>.</em>DEV</span></a>
         <p>Por Pedro Augusto Torres Emerich, 21 anos — desenvolvedor com 5 anos de experiência prática e graduando em Engenharia de Software.</p>
       </div>
       <div>
@@ -672,7 +674,7 @@ const mat = new THREE.ShaderMaterial({
     uniform float uOpacity; varying float vGlow; varying float vRnd;
     void main(){
       float d=length(gl_PointCoord-.5); float a=smoothstep(.5,0.,d); a*=a;
-      vec3 blue=vec3(.98,.45,.09),cyan=vec3(.98,.75,.14),vio=vec3(.94,.33,.16);
+      vec3 blue=vec3(.91,.71,.23),cyan=vec3(.99,.9,.54),vio=vec3(.78,.56,.1);
       vec3 col=mix(blue,cyan,vRnd); col=mix(col,vio,smoothstep(.75,1.,vRnd)*.7); col+=vGlow*.55;
       gl_FragColor=vec4(col,a*uOpacity*(.5+vGlow));
     }`,
@@ -682,7 +684,7 @@ const points = new THREE.Points(geo, mat);
 group.add(points);
 
 // orbit rings
-const orbitMat = new THREE.LineBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0, blending: THREE.AdditiveBlending });
+const orbitMat = new THREE.LineBasicMaterial({ color: 0xfde68a, transparent: true, opacity: 0, blending: THREE.AdditiveBlending });
 const orbits = [3.0, 3.5].map((rad, k) => {
   const pts = [];
   for (let i = 0; i <= 160; i++) { const a = i / 160 * Math.PI * 2; pts.push(new THREE.Vector3(Math.cos(a) * rad, Math.sin(a) * rad, 0)); }
@@ -700,7 +702,7 @@ for (let i = 0; i < SN; i++) {
 }
 const stars = new THREE.Points(
   new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(sPos, 3)),
-  new THREE.PointsMaterial({ color: 0xffa25c, size: 0.06, transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending })
+  new THREE.PointsMaterial({ color: 0xf2c14e, size: 0.06, transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending })
 );
 scene.add(stars);
 

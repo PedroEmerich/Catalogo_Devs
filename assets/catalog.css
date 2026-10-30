@@ -270,41 +270,41 @@ code {
 
 .lp-card--bastiao {
   --brand: #070b14;
-  --brand-ink: #fb923c;
-  --brand-text: #c2410c;
+  --brand-ink: #e8b53a;
+  --brand-text: #8a6100;
   --brand-soft: #0f1829;
 }
 
 .lp-card--sbc {
-  --brand: #c2410c;
-  --brand-text: #c2410c;
+  --brand: #8a6100;
+  --brand-text: #8a6100;
   --brand-soft: #1a0f08;
 }
 
 .lp-card--vetor {
-  --brand: #c2410c;
-  --brand-text: #c2410c;
-  --brand-soft: #ffedd5;
+  --brand: #8a6100;
+  --brand-text: #8a6100;
+  --brand-soft: #fff4d6;
 }
 
 @media (prefers-color-scheme: dark) {
   .lp-card--bastiao {
-    --brand: #fb923c;
-    --brand-ink: #2b1203;
-    --brand-text: #fb923c;
+    --brand: #e8b53a;
+    --brand-ink: #261a02;
+    --brand-text: #e8b53a;
     --brand-soft: #0b1220;
   }
 
   .lp-card--sbc {
-    --brand: #f97316;
+    --brand: #e8b53a;
     --brand-ink: #04060c;
-    --brand-text: #fdba74;
+    --brand-text: #f2c14e;
     --brand-soft: #1a0f08;
   }
 
   .lp-card--vetor {
-    --brand-text: #fdba74;
-    --brand-soft: #3a1d0c;
+    --brand-text: #f2c14e;
+    --brand-soft: #2e2208;
   }
 }
 
