@@ -535,6 +535,23 @@ html:not(.js) .step + .step {
   outline-offset: 2px;
 }
 
+/* Opção que ocupa a linha inteira: ícone à esquerda, como no celular. */
+.tile--wide {
+  grid-column: 1 / -1;
+}
+
+.tile--wide .tile__box {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 0.85rem;
+  padding: 0.8rem 1rem;
+}
+
+.tile--wide .tile__box .icon {
+  grid-row: span 2;
+  margin: 0;
+}
+
 /* No celular as opções viram linhas (ícone à esquerda) para os nomes caberem inteiros. */
 @media (max-width: 479px) {
   .tiles {

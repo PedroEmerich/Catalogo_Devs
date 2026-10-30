@@ -179,6 +179,13 @@ code {
   letter-spacing: -0.04em;
 }
 
+/* Em telas bem estreitas (320px), "desenvolvimento" precisa caber inteiro na linha. */
+@media (max-width: 359px) {
+  .intro h1 {
+    font-size: 2.2rem;
+  }
+}
+
 .intro__lead {
   max-width: 44rem;
   margin-top: 1.5rem;
@@ -433,25 +440,27 @@ code {
   color: var(--ink-soft);
 }
 
+/* Checklist 2 × 2 com as quatro frentes que toda página apresenta. */
 .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: 0.45rem 1.25rem;
 }
 
 .tags li {
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  background: var(--chip);
-  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--ink-soft);
 }
 
-.tags li.is-focus {
-  background: var(--brand);
-  font-weight: 600;
-  color: var(--brand-ink);
+.tags .icon {
+  width: 1.05em;
+  height: 1.05em;
+  stroke-width: 3;
+  color: var(--brand-text);
 }
 
 .specs {

@@ -468,9 +468,19 @@ html:not(.js) .nav-toggle {
   color: #a7f3d0;
 }
 
-.t-warn {
+.t-dev {
+  background: rgba(56, 189, 248, 0.16);
+  color: #bae6fd;
+}
+
+.t-fix {
   background: rgba(251, 191, 36, 0.16);
   color: #fde68a;
+}
+
+.t-app {
+  background: rgba(196, 181, 253, 0.16);
+  color: #ddd6fe;
 }
 
 .cursor {
@@ -725,6 +735,14 @@ html:not(.js) .nav-toggle {
   font-size: 0.95rem;
 }
 
+.quiz__item small {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+}
+
 .quiz__result {
   display: grid;
   gap: 1rem;
@@ -873,59 +891,32 @@ html:not(.js) .nav-toggle {
   color: var(--muted);
 }
 
+.service__list {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--line-strong);
+  font-size: 0.93rem;
+}
+
+.service__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.service__list .icon {
+  width: 1.1em;
+  height: 1.1em;
+  margin-top: 0.2em;
+  color: var(--accent);
+  stroke-width: 2.6;
+}
+
 @media (min-width: 640px) {
   .services {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1000px) {
-  .services {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.also {
-  margin-top: 2.5rem;
-  padding: 1.75rem;
-  border: 1px dashed var(--line-strong);
-  border-radius: 16px;
-}
-
-.also__title {
-  margin-bottom: 1.25rem;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 600;
-}
-
-.also__list {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.also__list li {
-  display: flex;
-  gap: 0.9rem;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-.also__list .icon {
-  margin-top: 3px;
-  color: var(--cyan);
-}
-
-.also__list strong {
-  display: block;
-  font-weight: 600;
-  color: var(--text);
-}
-
-@media (min-width: 900px) {
-  .also__list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem;
   }
 }
 
@@ -1027,6 +1018,37 @@ html:not(.js) .nav-toggle {
   font-weight: 700;
 }
 
+.diagram__frame {
+  fill: rgba(52, 211, 153, 0.03);
+  stroke: rgba(52, 211, 153, 0.35);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+}
+
+.diagram__links .diagram__threat {
+  stroke: rgba(248, 113, 113, 0.6);
+}
+
+.diagram__threat-label {
+  fill: var(--danger);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.diagram__pill rect {
+  fill: var(--bg);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.diagram__pill text {
+  fill: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  text-anchor: middle;
+}
+
 .pkt--bad {
   fill: var(--danger);
 }
@@ -1077,6 +1099,14 @@ html:not(.js) .nav-toggle {
 
   .diagram__node text {
     font-size: 25px;
+  }
+
+  .diagram__pill text {
+    font-size: 21px;
+  }
+
+  .diagram__threat-label {
+    font-size: 20px;
   }
 }
 
@@ -1243,10 +1273,19 @@ html:not(.js) .nav-toggle {
   font-size: 0.8rem;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .cases {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+@media (min-width: 1150px) {
+  .cases {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
 
   .quotes {
     grid-template-columns: repeat(2, minmax(0, 1fr));

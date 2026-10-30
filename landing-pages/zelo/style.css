@@ -210,6 +210,10 @@ body {
   text-underline-offset: 3px;
 }
 
+.topbar__phone {
+  white-space: nowrap;
+}
+
 .topbar__dot {
   width: 8px;
   height: 8px;
@@ -522,6 +526,18 @@ html:not(.js) .nav-toggle {
   border-bottom: 1px solid var(--line);
 }
 
+/* Em 320px o selo "Tudo operacional" desce para baixo do título em vez de alargar o painel. */
+@media (max-width: 359px) {
+  .status-card {
+    padding: 1.25rem;
+  }
+
+  .status-card__head {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+}
+
 .status-card__app {
   font-weight: 800;
   letter-spacing: -0.01em;
@@ -618,11 +634,6 @@ html:not(.js) .nav-toggle {
   width: 17px;
   height: 17px;
   stroke-width: 2.6;
-}
-
-.feed .is-progress .feed__icon {
-  background: var(--primary-soft);
-  color: var(--primary-strong);
 }
 
 .feed p {
@@ -818,6 +829,15 @@ html:not(.js) .nav-toggle {
   height: 24px;
 }
 
+.signs .signs__tag {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
 .signs h3 {
   font-size: 1.15rem;
   font-weight: 700;
@@ -835,9 +855,9 @@ html:not(.js) .nav-toggle {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .signs {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.25rem;
   }
 }
@@ -853,8 +873,7 @@ html:not(.js) .nav-toggle {
   position: relative;
   padding: 1.75rem 1.5rem;
   border-radius: 22px;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(11, 31, 28, 0.05);
+  background: var(--bg-tint);
 }
 
 .journey__num {
@@ -863,7 +882,7 @@ html:not(.js) .nav-toggle {
   width: 52px;
   height: 52px;
   margin-bottom: 1.1rem;
-  border: 5px solid var(--bg-tint);
+  border: 5px solid #fff;
   border-radius: 50%;
   background: var(--primary);
   color: #fff;
@@ -903,95 +922,84 @@ html:not(.js) .nav-toggle {
   }
 }
 
-/* Serviços */
+/* Serviços: quatro cartões com o mesmo peso */
 .services {
   display: grid;
   gap: 1.25rem;
 }
 
 .service {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.35rem 1.1rem;
-  align-content: start;
-  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
   border: 1px solid var(--line);
-  border-radius: 22px;
+  border-radius: 24px;
   background: #fff;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 
 .service__icon {
-  grid-row: span 2;
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  background: var(--primary-soft);
-  color: var(--primary-strong);
-}
-
-.service__icon .icon {
-  width: 25px;
-  height: 25px;
-}
-
-.service h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-}
-
-.service p {
-  color: var(--ink-soft);
-}
-
-.service--lead {
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-  padding: clamp(1.75rem, 3vw, 2.5rem);
-  border: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
   background: linear-gradient(160deg, var(--primary) 0%, var(--primary-deep) 100%);
   color: #fff;
 }
 
-.service--lead .service__icon {
-  grid-row: auto;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+.service__icon .icon {
+  width: 26px;
+  height: 26px;
 }
 
-.service--lead h3 {
-  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+.service h3 {
+  font-size: 1.3rem;
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
-.service--lead p {
-  margin-top: 0.5rem;
-  font-size: 1.05rem;
-  color: #d4ece7;
+.service > p {
+  color: var(--ink-soft);
 }
 
-.service--lead .ticks li {
-  color: #fff;
+.service .ticks {
+  flex: 1;
+  font-size: 0.95rem;
 }
 
-.service--lead .ticks .icon {
-  background: rgba(94, 234, 212, 0.2);
-  color: var(--mint);
+.service__cta {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+  font-weight: 700;
+  color: var(--primary-strong);
+  text-decoration: none;
 }
 
-@media (min-width: 900px) {
+.service__cta .icon {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform 0.2s ease;
+}
+
+.service__cta:hover .icon {
+  transform: translateX(4px);
+}
+
+@media (min-width: 800px) {
   .services {
-    grid-template-columns: 1.05fr 1fr;
-  }
-
-  .service--lead {
-    grid-row: span 3;
-    align-content: space-between;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1252,6 +1260,45 @@ html:not(.js) .nav-toggle {
   font-size: 0.92rem;
   font-weight: 600;
   color: var(--ink-soft);
+}
+
+.stack__groups {
+  display: grid;
+  gap: 1rem;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.stack__group {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #fff;
+}
+
+.stack__group h3 {
+  margin-bottom: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.stack__group .chips {
+  justify-content: flex-start;
+  max-width: none;
+  margin: 0;
+}
+
+.stack__group .chips li {
+  background: var(--bg-tint);
+}
+
+@media (min-width: 800px) {
+  .stack__groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .stack__note {

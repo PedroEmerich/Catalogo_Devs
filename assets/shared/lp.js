@@ -488,12 +488,13 @@
       minOut.textContent = min;
       maxOut.textContent = max;
       if (cta) {
-        const values = (type) => chosen.filter((input) => input.type === type).map((input) => input.value);
-        const text = [
-          `Fiz a simulação no site: de ${min} a ${max} semanas.`,
-          `Plataformas: ${values('radio').join(', ') || 'a definir'}`,
-          `Funcionalidades: ${values('checkbox').join(', ') || 'apenas o essencial'}`,
-        ].join('\n');
+        // Uma linha por grupo do simulador, usando a legenda do grupo como rótulo.
+        const groups = $$('fieldset', estimator).map((group) => {
+          const legend = group.querySelector('legend')?.textContent.trim() || 'Opções';
+          const values = $$('input:checked', group).map((input) => input.value);
+          return `${legend}: ${values.join(', ') || 'nenhuma opção marcada'}`;
+        });
+        const text = [`Fiz a simulação no site: de ${min} a ${max} semanas.`, ...groups].join('\n');
         cta.dataset.prefill = new URLSearchParams({ mensagem: text }).toString();
       }
     };

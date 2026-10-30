@@ -40,6 +40,7 @@
     <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
     <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.16 11.9c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 6.98 2.9 9.83 9.83 0 0 1 2.9 6.99c-.01 5.45-4.44 9.88-9.89 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.42"/></symbol>
   </svg>
 
@@ -113,6 +114,10 @@
                   <label class="tile">
                     <input type="radio" name="servico" value="Aplicativo iOS e Android">
                     <span class="tile__box"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><strong>Aplicativo</strong><small>iOS e Android</small></span>
+                  </label>
+                  <label class="tile tile--wide">
+                    <input type="radio" name="servico" value="Mais de um serviço">
+                    <span class="tile__box"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg><strong>Mais de um serviço</strong><small>Sistema, app, infraestrutura e suporte juntos</small></span>
                   </label>
                 </div>
               </fieldset>
@@ -448,6 +453,18 @@
           <details name="faq">
             <summary>Posso contratar só uma das frentes?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
             <p>Sim. Muitos clientes começam com uma frente — como manutenção ou infraestrutura — e ampliam quando veem o resultado.</p>
+          </details>
+          <details name="faq">
+            <summary>Vocês assumem sistemas feitos por outra empresa?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Sim. Fazemos um diagnóstico técnico, documentamos o sistema e assumimos a sustentação com SLA — sem precisar reescrever tudo do zero.</p>
+          </details>
+          <details name="faq">
+            <summary>Cuidam dos servidores e do firewall que já temos?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Sim. Assumimos a gestão de servidores locais ou em nuvem, firewall, VPN e backups, com monitoramento 24/7 e resposta a incidentes críticos em até 15 minutos.</p>
+          </details>
+          <details name="faq">
+            <summary>O aplicativo fica no nome da minha empresa?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <p>Sim. As contas da Apple e do Google, o código-fonte e todos os acessos são da sua empresa — você nunca fica preso a nós.</p>
           </details>
           <details name="faq">
             <summary>Como funciona o squad dedicado?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
