@@ -58,8 +58,8 @@
 
     const ctx = canvas.getContext('2d');
     const GRID = 48; // mesmo passo da grade de fundo do hero
-    const GREEN = '52, 211, 153';
-    const RED = '248, 113, 113';
+    const GREEN = '251, 146, 60'; // laranja do tema
+    const RED = '244, 63, 94';
     let w = 0;
     let h = 0;
     let dpr = 1;

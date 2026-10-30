@@ -12,14 +12,14 @@
   --line-strong: #2a3b5c;
   --text: #e6edf7;
   --muted: #9aa9c0;
-  --accent: #34d399;
-  --accent-hover: #6ee7b7;
-  --accent-ink: #04271a;
-  --cyan: #38bdf8;
+  --accent: #fb923c;
+  --accent-hover: #fdba74;
+  --accent-ink: #2b1203;
+  --cyan: #fbbf24;
   --warn: #fbbf24;
-  --orange: #fb923c;
-  --danger: #f87171;
-  --focus: #34d399;
+  --orange: #f97316;
+  --danger: #f43f5e;
+  --focus: #fb923c;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
@@ -35,7 +35,7 @@ body {
 }
 
 ::selection {
-  background: rgba(52, 211, 153, 0.35);
+  background: rgba(251, 146, 60, 0.35);
 }
 
 a {
@@ -98,7 +98,7 @@ a {
 .btn--accent {
   background: var(--accent);
   color: var(--accent-ink);
-  box-shadow: 0 10px 30px -12px rgba(52, 211, 153, 0.7);
+  box-shadow: 0 10px 30px -12px rgba(251, 146, 60, 0.7);
 }
 
 .btn--accent:hover {
@@ -307,8 +307,8 @@ html:not(.js) .nav-toggle {
 
 .hero::after {
   background:
-    radial-gradient(circle at 78% 38%, rgba(52, 211, 153, 0.16), transparent 42%),
-    radial-gradient(circle at 5% 95%, rgba(56, 189, 248, 0.1), transparent 40%);
+    radial-gradient(circle at 78% 38%, rgba(251, 146, 60, 0.16), transparent 42%),
+    radial-gradient(circle at 5% 95%, rgba(251, 191, 36, 0.1), transparent 40%);
 }
 
 .hero__grid {
@@ -383,7 +383,7 @@ html:not(.js) .nav-toggle {
   background: rgba(4, 7, 13, 0.94);
   box-shadow:
     0 40px 80px -30px rgba(0, 0, 0, 0.85),
-    0 0 90px -25px rgba(52, 211, 153, 0.35);
+    0 0 90px -25px rgba(251, 146, 60, 0.35);
   font-family: var(--font-mono);
   font-size: clamp(0.72rem, 1.9vw, 0.8rem);
   overflow: hidden;
@@ -414,7 +414,7 @@ html:not(.js) .nav-toggle {
 }
 
 .terminal__bar i:nth-child(3) {
-  background: #34d399;
+  background: #fb923c;
 }
 
 .terminal__bar span {
@@ -459,18 +459,18 @@ html:not(.js) .nav-toggle {
 }
 
 .t-block {
-  background: rgba(248, 113, 113, 0.16);
+  background: rgba(244, 63, 94, 0.16);
   color: #fecaca;
 }
 
 .t-ok {
-  background: rgba(52, 211, 153, 0.14);
-  color: #a7f3d0;
+  background: rgba(251, 146, 60, 0.14);
+  color: #fed7aa;
 }
 
 .t-dev {
-  background: rgba(56, 189, 248, 0.16);
-  color: #bae6fd;
+  background: rgba(251, 191, 36, 0.16);
+  color: #fde68a;
 }
 
 .t-fix {
@@ -727,8 +727,8 @@ html:not(.js) .nav-toggle {
 }
 
 .quiz__item:has(input:checked) {
-  border-color: rgba(248, 113, 113, 0.5);
-  background: rgba(248, 113, 113, 0.07);
+  border-color: rgba(244, 63, 94, 0.5);
+  background: rgba(244, 63, 94, 0.07);
 }
 
 .quiz__item span {
@@ -868,9 +868,9 @@ html:not(.js) .nav-toggle {
   width: 48px;
   height: 48px;
   margin-bottom: 1.25rem;
-  border: 1px solid rgba(52, 211, 153, 0.3);
+  border: 1px solid rgba(251, 146, 60, 0.3);
   border-radius: 12px;
-  background: rgba(52, 211, 153, 0.08);
+  background: rgba(251, 146, 60, 0.08);
   color: var(--accent);
 }
 
@@ -964,7 +964,7 @@ html:not(.js) .nav-toggle {
   border: 1px solid var(--line);
   border-radius: 20px;
   background:
-    radial-gradient(circle at 42% 50%, rgba(52, 211, 153, 0.1), transparent 55%),
+    radial-gradient(circle at 42% 50%, rgba(251, 146, 60, 0.1), transparent 55%),
     var(--surface);
 }
 
@@ -1004,9 +1004,9 @@ html:not(.js) .nav-toggle {
 }
 
 .diagram__node--fw rect {
-  fill: rgba(52, 211, 153, 0.1);
+  fill: rgba(251, 146, 60, 0.1);
   stroke: var(--accent);
-  filter: drop-shadow(0 0 14px rgba(52, 211, 153, 0.45));
+  filter: drop-shadow(0 0 14px rgba(251, 146, 60, 0.45));
 }
 
 .diagram__node--fw use {
@@ -1019,14 +1019,14 @@ html:not(.js) .nav-toggle {
 }
 
 .diagram__frame {
-  fill: rgba(52, 211, 153, 0.03);
-  stroke: rgba(52, 211, 153, 0.35);
+  fill: rgba(251, 146, 60, 0.03);
+  stroke: rgba(251, 146, 60, 0.35);
   stroke-width: 1.5;
   stroke-dasharray: 4 6;
 }
 
 .diagram__links .diagram__threat {
-  stroke: rgba(248, 113, 113, 0.6);
+  stroke: rgba(244, 63, 94, 0.6);
 }
 
 .diagram__threat-label {
@@ -1226,7 +1226,7 @@ html:not(.js) .nav-toggle {
   padding: 1.75rem;
   border-left: 3px solid var(--accent);
   border-radius: 0 14px 14px 0;
-  background: linear-gradient(90deg, rgba(52, 211, 153, 0.07), transparent 75%);
+  background: linear-gradient(90deg, rgba(251, 146, 60, 0.07), transparent 75%);
 }
 
 .quote blockquote p {
@@ -1316,7 +1316,7 @@ html:not(.js) .nav-toggle {
 }
 
 .faq details[open] {
-  border-color: rgba(52, 211, 153, 0.45);
+  border-color: rgba(251, 146, 60, 0.45);
 }
 
 .faq summary {
@@ -1355,7 +1355,7 @@ html:not(.js) .nav-toggle {
 /* Contato */
 .contact {
   background:
-    radial-gradient(60% 80% at 100% 0%, rgba(52, 211, 153, 0.12), transparent 60%),
+    radial-gradient(60% 80% at 100% 0%, rgba(251, 146, 60, 0.12), transparent 60%),
     var(--bg);
 }
 
@@ -1464,7 +1464,7 @@ html:not(.js) .nav-toggle {
 .field :is(input, select, textarea):focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.22);
+  box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.22);
 }
 
 .field [aria-invalid='true'] {
@@ -1759,7 +1759,7 @@ html:not(.js) .nav-toggle {
 .fx .quiz__item,
 .fx .voice,
 .fx .faq details {
-  background-image: radial-gradient(340px circle at var(--mx, -999px) var(--my, -999px), rgba(52, 211, 153, 0.09), transparent 65%);
+  background-image: radial-gradient(340px circle at var(--mx, -999px) var(--my, -999px), rgba(251, 146, 60, 0.09), transparent 65%);
 }
 
 /* Diagrama: rotas energizadas conforme a rolagem; nós acendem em sequência */
@@ -1770,12 +1770,12 @@ html:not(.js) .nav-toggle {
   stroke-linecap: round;
   stroke-dasharray: 1;
   stroke-dashoffset: calc(1 - var(--draw, 0));
-  filter: drop-shadow(0 0 4px rgba(52, 211, 153, 0.6));
+  filter: drop-shadow(0 0 4px rgba(251, 146, 60, 0.6));
 }
 
 .fx-energy .is-threat {
   stroke: var(--danger);
-  filter: drop-shadow(0 0 4px rgba(248, 113, 113, 0.6));
+  filter: drop-shadow(0 0 4px rgba(244, 63, 94, 0.6));
 }
 
 .fx .diagram__node {

@@ -10,10 +10,10 @@ const { chromium } = require('playwright');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'assets', 'previews');
-// Modelos do repositório e a página real da SBC Dev (capturada do endereço publicado).
+// Modelos do repositório e a cópia de demonstração da SBC Dev (tem tela de carregamento).
 const PAGES = [
   { slug: 'bastiao', url: pathToFileURL(path.join(ROOT, 'landing-pages', 'bastiao', 'index.html')).href },
-  { slug: 'sbc', url: 'https://pedroemerich.github.io/MeAndMyCompany/', settle: 9000 },
+  { slug: 'sbc', url: pathToFileURL(path.join(ROOT, 'landing-pages', 'sbc', 'index.html')).href, settle: 9000 },
   { slug: 'vetor', url: pathToFileURL(path.join(ROOT, 'landing-pages', 'vetor', 'index.html')).href },
 ];
 const SHOTS = [

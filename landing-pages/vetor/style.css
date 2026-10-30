@@ -9,13 +9,13 @@
   --ink-soft: #3a3d4a;
   --muted: #5b5f6e;
   --line: #e3e5ec;
-  --blue: #2b3bff;
-  --blue-strong: #1e28d6;
-  --blue-soft: #e8eaff;
-  --lime: #d9ff43;
+  --blue: #c2410c;
+  --blue-strong: #9a3412;
+  --blue-soft: #ffedd5;
+  --lime: #fdba74;
   --on-dark-muted: #c3c6d3;
   --danger: #c81e1e;
-  --focus: #2b3bff;
+  --focus: #c2410c;
   --font: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --radius: 6px;
   --container: 1240px;
@@ -650,7 +650,7 @@ html:not(.js) .step + .step {
 .field :is(input, select, textarea):focus {
   outline: none;
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(43, 59, 255, 0.18);
+  box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.18);
 }
 
 .field [aria-invalid='true'] {
@@ -822,7 +822,7 @@ html:not(.js) .step + .step {
 }
 
 .tabs__tab[aria-selected='true'] span {
-  color: var(--lime);
+  color: var(--blue-soft);
 }
 
 .tabs__tab:focus-visible {
@@ -971,7 +971,7 @@ html:not(.js) .tabs__panel + .tabs__panel {
 }
 
 .model--featured .model__fit strong {
-  color: var(--lime);
+  color: var(--blue-soft);
 }
 
 .model__badge {
@@ -1543,7 +1543,7 @@ html:not(.js) .tabs__panel + .tabs__panel {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--lime);
+  background: #15a7f3; /* complemento: sobre o branco o "difference" fica laranja */
   mix-blend-mode: difference;
   pointer-events: none;
   transition: opacity 0.2s ease;

@@ -6,13 +6,17 @@ Catálogo de landing pages para empresas de desenvolvimento de software: **dois 
 
 | # | Modelo | Estilo | Destaques | Visual |
 |---|--------|--------|-----------|--------|
-| 01 | [Bastião Tecnologia & Segurança](landing-pages/bastiao/index.html) | Técnica e escura | Escudo que segue o cursor e bloqueia ameaças no hero, retícula de mira, títulos que se decriptam, diagrama energizado pela rolagem e autodiagnóstico | Escuro técnico, verde terminal · Space Grotesk + IBM Plex + JetBrains Mono |
-| 02 | [SBC Dev](https://pedroemerich.github.io/MeAndMyCompany/) | Página real e publicada | Globo 3D de partículas no hero, seis especialidades, linha do tempo da trajetória e contato por WhatsApp e e-mail | Escuro com azul, ciano e violeta · Space Grotesk + JetBrains Mono |
-| 03 | [Vetor Software House](landing-pages/vetor/index.html) | Suíça e assertiva | Título elástico que reage ao cursor, grade suíça de 12 colunas, índices gigantes esticados pela rolagem, orçamento em 3 etapas e serviços em abas | Suíço/brutalista, azul elétrico e lima · Archivo |
+| 01 | [Bastião Tecnologia & Segurança](landing-pages/bastiao/index.html) | Técnica e escura | Escudo que segue o cursor e bloqueia ameaças no hero, retícula de mira, títulos que se decriptam, diagrama energizado pela rolagem e autodiagnóstico | Escuro técnico com laranja · Space Grotesk + IBM Plex + JetBrains Mono |
+| 02 | [SBC Dev](landing-pages/sbc/index.html) | Página real, em cópia de demonstração | Globo 3D de partículas no hero, seis especialidades, linha do tempo da trajetória e contato por WhatsApp e e-mail | Escuro com laranja e âmbar · Space Grotesk + JetBrains Mono |
+| 03 | [Vetor Software House](landing-pages/vetor/index.html) | Suíça e assertiva | Título elástico que reage ao cursor, grade suíça de 12 colunas, índices gigantes esticados pela rolagem, orçamento em 3 etapas e serviços em abas | Suíço/brutalista, laranja queimado e pêssego · Archivo |
 
 A página inicial ([`index.html`](index.html)) é a vitrine: mostra as prévias, as características de cada modelo e permite ver cada página em desktop, tablet e celular sem sair do catálogo.
 
-> A SBC Dev é uma empresa real; o código da página fica no repositório [MeAndMyCompany](https://github.com/PedroEmerich/meandmycompany) e o catálogo só aponta para o endereço publicado. Já Bastião e Vetor são **fictícias**: empresas, números, cases, depoimentos, telefones (`(11) 90000-0000`) e e-mails (`@*.example`) servem apenas como demonstração. Esses modelos vêm com `<meta name="robots" content="noindex">` para não aparecerem no Google enquanto forem demonstrações.
+> A SBC Dev é uma empresa real. A página original fica no repositório [MeAndMyCompany](https://github.com/PedroEmerich/meandmycompany) e segue publicada sem alterações em <https://pedroemerich.github.io/MeAndMyCompany/>. O catálogo usa uma **cópia de demonstração** em `landing-pages/sbc/`, com o tema trocado para laranja e `noindex` para não competir com a original no Google. Já Bastião e Vetor são **fictícias**: empresas, números, cases, depoimentos, telefones (`(11) 90000-0000`) e e-mails (`@*.example`) servem apenas como demonstração. Esses modelos vêm com `<meta name="robots" content="noindex">` para não aparecerem no Google enquanto forem demonstrações.
+
+## Tema laranja
+
+Para demonstrar como a identidade muda com poucas variáveis, as três páginas estão em tons de laranja: Bastião (laranja sobre o escuro), Vetor (laranja queimado com destaque pêssego) e a cópia da SBC Dev (laranja e âmbar). Nos modelos, as cores ficam nas variáveis do topo do `style.css`; os efeitos em canvas da Bastião usam a mesma cor em `fx.js`.
 
 ## Interações de scroll e cursor
 
@@ -46,7 +50,7 @@ assets/
     base.css                reset, utilidades e estados comuns
     lp.js                   comportamentos compartilhados (formulários, abas, simuladores…)
 landing-pages/
-  bastiao/   vetor/
+  bastiao/   vetor/   sbc/ (cópia da página da SBC Dev)
     index.html              conteúdo da página
     style.css               identidade visual (variáveis no topo)
     fx.js                   interações de scroll e cursor (opcional)
