@@ -2,12 +2,12 @@
 
 Catálogo com **três modelos de landing page da InfoG**, empresa de desenvolvimento de software, prontos para campanhas de Google Ads. Nos textos abaixo os modelos são chamados pelos nomes das pastas: **Bastião** (01), **SBC** (02) e **Vetor** (03).
 
-**Os modelos Bastião e Vetor trazem as quatro frentes completas — desenvolvimento, manutenção, servidores e firewall e aplicativos — com o mesmo peso:** descrição, entregas, botão de orçamento que já seleciona o serviço no formulário e respostas no FAQ para cada uma. Nenhum modelo é dedicado a um serviço só; o que muda entre elas é a identidade visual, o tom e os recursos de conversão.
+**Os três modelos trazem as quatro frentes completas — desenvolvimento, manutenção, servidores e firewall e aplicativos — com o mesmo peso:** descrição, entregas, botão de orçamento que já seleciona o serviço no formulário e respostas no FAQ para cada uma. Nenhum modelo é dedicado a um serviço só; o que muda entre elas é a identidade visual, o tom e os recursos de conversão.
 
 | # | Modelo | Estilo | Destaques | Visual |
 |---|--------|--------|-----------|--------|
 | 01 | [InfoG · Tecnologia & Segurança](landing-pages/bastiao/index.html) | Técnica e escura | Escudo que segue o cursor e bloqueia ameaças no hero, retícula de mira, títulos que se decriptam, diagrama energizado pela rolagem e autodiagnóstico | Escuro técnico com dourado · Space Grotesk + IBM Plex + JetBrains Mono |
-| 02 | [InfoG · Engenharia sob medida](landing-pages/sbc/index.html) | Futurista e imersiva (a partir da página da SBC Dev) | Globo 3D de partículas no hero, seis especialidades, linha do tempo da trajetória e contato por WhatsApp e e-mail | Escuro com dourado e creme · Space Grotesk + JetBrains Mono |
+| 02 | [InfoG · Engenharia sob medida](landing-pages/sbc/index.html) | Futurista e imersiva (a partir da página da SBC Dev) | Globo 3D de partículas no hero, cursor magnético, processo em rolagem horizontal, cases, dúvidas e formulário de orçamento | Escuro com dourado e creme · Space Grotesk + JetBrains Mono |
 | 03 | [InfoG · Software House](landing-pages/vetor/index.html) | Suíça e assertiva | Título elástico que reage ao cursor, grade suíça de 12 colunas, índices gigantes esticados pela rolagem, orçamento em 3 etapas e serviços em abas | Suíço/brutalista, preto e dourado · Archivo |
 
 A página inicial ([`index.html`](index.html)) é a vitrine: mostra as prévias, as características de cada modelo e permite ver cada página em desktop, tablet e celular sem sair do catálogo.

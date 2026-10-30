@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>InfoG — Engenharia de Software Sob Medida</title>
-<meta name="description" content="InfoG — engenharia de software sob medida. Full stack, mobile, banco de dados e modernização de sistemas. São Bernardo do Campo, SP.">
+<title>InfoG · Desenvolvimento, manutenção, servidores e apps</title>
+<meta name="description" content="InfoG: desenvolvimento de sistemas e aplicativos, manutenção com SLA e servidores e firewall gerenciados 24/7 — um único time responsável, do código ao servidor.">
 <meta name="theme-color" content="#04060c">
-<!-- Cópia de demonstração (tema dourado) da página publicada em pedroemerich.github.io/MeAndMyCompany. -->
+<!-- Modelo InfoG criado a partir da página publicada em pedroemerich.github.io/MeAndMyCompany (visual mantido, conteúdo da InfoG). -->
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="../../assets/shared/logo-g-64.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -221,6 +221,57 @@ footer{border-top:1px solid var(--line);background:rgba(3,4,9,.9);padding:64px 0
 .f-big{margin-top:64px;font-size:clamp(64px,17vw,270px);font-weight:700;letter-spacing:-.06em;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--line-2);white-space:nowrap;user-select:none}
 .f-bottom{margin-top:36px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--dim)}
 
+/* ---------- conteúdo InfoG: cases, depoimentos, dúvidas e formulário ---------- */
+.card-inner{display:flex;flex-direction:column}
+.card .tags{margin-bottom:6px}
+.card-cta{margin-top:auto;padding-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--cyan);transform:translateZ(20px);transition:color .3s}
+.card-cta:hover{color:var(--fg)}
+.cases{padding-top:clamp(110px,14vw,170px)}
+.cards--4{grid-template-columns:repeat(4,1fr)}
+.cards--4 .card-num{letter-spacing:.1em;line-height:1.5}
+.case-metric{margin-top:40px!important;font-size:clamp(46px,4.6vw,64px)!important;font-weight:600!important;line-height:1;letter-spacing:-.04em;color:var(--fg)!important;background:linear-gradient(100deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cards--4 h3{margin-top:12px;font-size:19px}
+.voices{margin-top:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.voice{margin:0;padding:34px 30px;border:1px solid var(--line);border-radius:20px;background:var(--glass)}
+.voice blockquote{margin:0;font-size:clamp(18px,1.6vw,22px);font-weight:300;line-height:1.45}
+.voice figcaption{margin-top:20px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.voice figcaption strong{display:block;margin-bottom:4px;color:var(--cyan);font-weight:500}
+.faq{padding:clamp(110px,14vw,170px) 0 0}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+.faq-list{border-top:1px solid var(--line-2)}
+.faq-list details{border-bottom:1px solid var(--line-2)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:24px 0;font-size:19px;font-weight:500}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-family:var(--mono);color:var(--cyan);font-size:20px;transition:transform .3s}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list details p{padding:0 0 24px;max-width:60ch;color:var(--muted);font-weight:300}
+.lead{margin:56px auto 0;max-width:820px;padding:clamp(24px,4vw,40px);border:1px solid var(--line-2);border-radius:24px;background:var(--glass);backdrop-filter:blur(12px);text-align:left}
+.lead-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 20px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field--wide{grid-column:1/-1}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;padding:14px 16px;border:1px solid var(--line-2);border-radius:12px;background:rgba(4,6,12,.7);color:var(--fg);font:inherit;font-size:16px}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--cyan) 50%),linear-gradient(135deg,var(--cyan) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.field select option{background:#080c17;color:var(--fg)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--blue);outline-offset:2px;border-color:transparent}
+.field [aria-invalid="true"]{border-color:#f87171}
+.field-error{margin:0;font-size:13px;color:#fca5a5}
+.form-status{margin:12px 0 0;font-size:14px;color:#fca5a5}
+.lead > .btn{margin-top:26px;width:100%;justify-content:center}
+.lead-note{margin:14px 0 0!important;font-size:13px!important;text-align:center}
+.lead-success{text-align:center}
+.lead-success h3{margin-top:12px;font-size:clamp(26px,3vw,36px);font-weight:500}
+.lead-success p{margin:12px auto 22px!important}
+form.is-sent > :not([data-form-success]){display:none!important}
+.lead-success[hidden]{display:none}
+.f-bottom a{color:var(--muted);transition:color .3s}
+.f-bottom a:hover{color:var(--cyan)}
+@media (max-width:1100px){.cards--4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){
+  .cards--4,.voices,.lead-grid,.faq-grid{grid-template-columns:1fr}
+  .faq-grid{gap:20px}
+}
+
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
   .cards{grid-template-columns:repeat(2,1fr)}
@@ -256,7 +307,7 @@ footer{border-top:1px solid var(--line);background:rgba(3,4,9,.9);padding:64px 0
 }
 </style>
 </head>
-<body class="loading">
+<body class="loading" data-whatsapp="5511970803077">
 
 <canvas id="gl" aria-hidden="true"></canvas>
 <div class="bg-grid" aria-hidden="true"></div>
@@ -268,7 +319,7 @@ footer{border-top:1px solid var(--line);background:rgba(3,4,9,.9);padding:64px 0
     <div class="loader-count">000</div>
     <div class="loader-bar"><span></span></div>
   </div>
-  <div class="loader-bot"><span>BUILD_VERSION_2.0.0</span><span>SÃO BERNARDO DO CAMPO — BR</span></div>
+  <div class="loader-bot"><span>SOFTWARE HOUSE</span><span>DO CÓDIGO AO SERVIDOR</span></div>
 </div>
 
 <div id="cursor" aria-hidden="true"><div class="c-dot"></div><div class="c-ring"><span class="c-label"></span></div></div>
@@ -282,47 +333,47 @@ footer{border-top:1px solid var(--line);background:rgba(3,4,9,.9);padding:64px 0
   </a>
   <nav class="nav-links" aria-label="Principal">
     <a href="#servicos" data-idx="01" data-hover-scramble>SERVIÇOS</a>
-    <a href="#experiencia" data-idx="02" data-hover-scramble>TRAJETÓRIA</a>
-    <a href="#contato" data-idx="03" data-hover-scramble>CONTATO</a>
-    <a href="curriculo-pedro-emerich.pdf" target="_blank" rel="noopener" data-idx="04" data-hover-scramble>CURRÍCULO</a>
+    <a href="#processo" data-idx="02" data-hover-scramble>COMO FUNCIONA</a>
+    <a href="#cases" data-idx="03" data-hover-scramble>CASES</a>
+    <a href="#faq" data-idx="04" data-hover-scramble>DÚVIDAS</a>
   </nav>
-  <a class="nav-cta magnetic" href="https://wa.me/5511970803077?text=Ol%C3%A1!%20Vi%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener"><span class="dot"></span>DISPONÍVEL</a>
+  <a class="nav-cta magnetic" href="#contato"><span class="dot"></span>ORÇAMENTO</a>
 </header>
 
 <main>
   <!-- HERO -->
   <section class="hero" id="top" data-section="INÍCIO">
     <div class="hud" aria-hidden="true">
-      <div class="hud-item hud-tr"><span>SYS.STATUS</span><b>● ONLINE — 2026</b></div>
-      <div class="hud-item hud-bl"><span>LAT −23.6914 / LON −46.5646</span><b>SÃO BERNARDO DO CAMPO, SP</b></div>
+      <div class="hud-item hud-tr"><span>SYS.STATUS</span><b>● NOC ONLINE — 24/7</b></div>
+      <div class="hud-item hud-bl"><span>COBERTURA</span><b>TODO O BRASIL · REMOTO E PRESENCIAL</b></div>
       <div class="hud-item hud-br"><span>CURSOR</span><b class="hud-cursor">X 0000 · Y 0000</b></div>
     </div>
     <div class="wrap">
-      <div class="tag"><span class="dot"></span>DESENVOLVEDOR FULL STACK • PLENO</div>
+      <div class="tag"><span class="dot"></span>DESENVOLVIMENTO • MANUTENÇÃO • SERVIDORES • APPS</div>
       <h1 class="hero-title">
         <span class="line"><span class="split">CÓDIGO</span></span>
         <span class="line"><span class="split grad">SÓLIDO</span></span>
-        <span class="line small"><span class="split">Jovem. Experiente.</span></span>
+        <span class="line small"><span class="split">Do código ao servidor.</span></span>
       </h1>
-      <p class="hero-sub">Desenvolvedor de software com <strong>5 anos de experiência prática</strong> e graduando em Engenharia de Software. Do planejamento ao deploy, transformo complexidade técnica em produtos digitais de alto desempenho.</p>
+      <p class="hero-sub">Desenvolvemos sistemas e aplicativos sob medida, fazemos a <strong>manutenção com SLA</strong> e gerenciamos <strong>servidores e firewall 24/7</strong> — um único time sênior responsável de ponta a ponta. Menos fornecedores, menos ruído, mais entrega.</p>
       <div class="hero-ctas">
-        <a class="btn primary magnetic" data-cursor="WHATS" href="https://wa.me/5511970803077?text=Ol%C3%A1!%20Vi%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+        <a class="btn primary magnetic" data-cursor="IR" href="#contato">
           <span>Solicitar orçamento</span>
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="btn ghost magnetic" data-cursor="ABRIR" href="curriculo-pedro-emerich.pdf" target="_blank" rel="noopener"><span>Ver currículo</span></a>
+        <a class="btn ghost magnetic" data-cursor="WHATS" href="https://wa.me/5511970803077?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20InfoG%20e%20quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener"><span>Falar no WhatsApp</span></a>
       </div>
     </div>
     <div class="scroll-hint" aria-hidden="true">SCROLL<span class="bar"></span></div>
   </section>
 
   <!-- STATS -->
-  <section class="stats" aria-label="Números">
+  <section class="stats" aria-label="Números da InfoG">
     <div class="wrap stats-grid">
-      <div class="stat"><div class="stat-num"><span class="accent">+</span><span data-count="10">0</span></div><div class="stat-label">PROJETOS ENTREGUES</div></div>
-      <div class="stat"><div class="stat-num"><span class="accent">+</span><span data-count="5">0</span></div><div class="stat-label">ANOS DE CÓDIGO</div></div>
-      <div class="stat"><div class="stat-num">Full</div><div class="stat-label">STACK &amp; MOBILE</div></div>
-      <div class="stat"><div class="stat-num">Clean<span class="accent">.</span></div><div class="stat-label">ARQUITETURA LIMPA</div></div>
+      <div class="stat"><div class="stat-num"><span class="accent">+</span><span data-count="250">250</span></div><div class="stat-label">PROJETOS ENTREGUES</div></div>
+      <div class="stat"><div class="stat-num"><span data-count="15">15</span><span class="accent">min</span></div><div class="stat-label">RESPOSTA A INCIDENTES CRÍTICOS</div></div>
+      <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">MONITORAMENTO COM EQUIPE PRÓPRIA</div></div>
+      <div class="stat"><div class="stat-num"><span data-count="97">97</span><span class="accent">%</span></div><div class="stat-label">DE RENOVAÇÃO DE CONTRATOS</div></div>
     </div>
   </section>
 
@@ -331,59 +382,63 @@ footer{border-top:1px solid var(--line);background:rgba(3,4,9,.9);padding:64px 0
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="eyebrow reveal" data-scramble>Especialidades</div>
-          <h2 class="h2 reveal">O que a InfoG oferece <span class="soft">ao seu negócio.</span></h2>
+          <div class="eyebrow reveal" data-scramble>Serviços</div>
+          <h2 class="h2 reveal">Quatro frentes, <span class="soft">um único time responsável.</span></h2>
         </div>
-        <span class="mono reveal">/ expertise_catalog_2026</span>
+        <span class="mono reveal">/ contrate uma ou todas</span>
       </div>
 
       <div class="cards">
         <article class="card" data-cursor="↗">
           <div class="card-inner">
-            <div class="card-top"><span class="card-num">01</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span></div>
-            <h3>Desenvolvimento Full Stack</h3>
-            <p>Ciclo completo do projeto — concepção, implementação e manutenção — com interfaces em Angular e serviços e APIs em Node.js.</p>
-            <div class="tags"><span>Angular</span><span>Node.js</span><span>TypeScript</span><span>REST</span></div>
+            <div class="card-top"><span class="card-num">01</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span></div>
+            <h3>Desenvolvimento de sistemas</h3>
+            <p>Sistemas web, ERPs, portais, plataformas SaaS e integrações sob medida, com testes automatizados e segurança desde o primeiro sprint.</p>
+            <div class="tags"><span>Discovery e UX</span><span>Integrações</span><span>OWASP</span></div>
+            <a class="card-cta" href="#contato" data-prefill="servico=Desenvolvimento de sistemas">Quero desenvolver um sistema →</a>
           </div>
         </article>
         <article class="card" data-cursor="↗">
           <div class="card-inner">
-            <div class="card-top"><span class="card-num">02</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span></div>
-            <h3>Sistemas Multiplataforma</h3>
-            <p>Aplicativos e sistemas cross-platform com Delphi/Pascal, incluindo publicação e atualização na Google Play e na App Store.</p>
-            <div class="tags"><span>Delphi</span><span>Pascal</span><span>Play Store</span><span>App Store</span><span>Flutter</span></div>
+            <div class="card-top"><span class="card-num">02</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.6-4.5M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5M20 20v-4h-4"/></svg></span></div>
+            <h3>Manutenção com SLA</h3>
+            <p>Sustentação de sistemas próprios ou herdados de outros fornecedores: correções de 30 min a 8h, atualizações, documentação e melhorias todo mês.</p>
+            <div class="tags"><span>SLA</span><span>Legado</span><span>Relatório mensal</span></div>
+            <a class="card-cta" href="#contato" data-prefill="servico=Manutenção de sistemas">Quero sustentação com SLA →</a>
           </div>
         </article>
         <article class="card" data-cursor="↗">
           <div class="card-inner">
-            <div class="card-top"><span class="card-num">03</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6M4.5 11.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></svg></span></div>
-            <h3>Banco de Dados &amp; Integrações</h3>
-            <p>Modelagem, otimização e administração de bancos, além de integrações entre sistemas e APIs de terceiros.</p>
-            <div class="tags"><span>SQL Server</span><span>PostgreSQL</span><span>MySQL</span><span>APIs</span></div>
+            <div class="card-top"><span class="card-num">03</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span></div>
+            <h3>Servidores e firewall</h3>
+            <p>Infraestrutura local ou em nuvem com firewall gerenciado, VPN com dois fatores, backup imutável e monitoramento 24 horas pelo nosso NOC.</p>
+            <div class="tags"><span>Firewall + IPS</span><span>VPN</span><span>Backup</span><span>Nuvem</span></div>
+            <a class="card-cta" href="#contato" data-prefill="servico=Servidores e firewall">Quero proteger minha infra →</a>
           </div>
         </article>
         <article class="card" data-cursor="↗">
           <div class="card-inner">
-            <div class="card-top"><span class="card-num">04</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 11a8 8 0 0 0-14.6-4.5M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5M20 20v-4h-4"/></svg></span></div>
-            <h3>Modernização de Sistemas</h3>
-            <p>Manutenção evolutiva, refatoração e correção de sistemas legados, incluindo soluções TOTVS Protheus.</p>
-            <div class="tags"><span>Refactoring</span><span>Legado</span><span>ADVPL</span><span>Protheus</span></div>
+            <div class="card-top"><span class="card-num">04</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span></div>
+            <h3>Aplicativos iOS e Android</h3>
+            <p>Apps nativos ou multiplataforma com backend, painel administrativo e notificações, publicados na App Store e no Google Play e mantidos depois do lançamento.</p>
+            <div class="tags"><span>Flutter</span><span>React Native</span><span>Swift</span><span>Kotlin</span></div>
+            <a class="card-cta" href="#contato" data-prefill="servico=Aplicativo iOS e Android">Quero criar um app →</a>
           </div>
         </article>
         <article class="card" data-cursor="↗">
           <div class="card-inner">
-            <div class="card-top"><span class="card-num">05</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M6 8.5v7M8.5 6H14a4 4 0 0 1 4 4v5.5"/></svg></span></div>
-            <h3>Metodologias Ágeis</h3>
-            <p>Trabalho integrado ao time do cliente com ritos ágeis e foco total em qualidade e pontualidade.</p>
-            <div class="tags"><span>Ritos ágeis</span><span>Git</span><span>GitHub</span><span>Cursor</span></div>
+            <div class="card-top"><span class="card-num">05</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M6 8.5v7M8.5 6H14a4 4 0 0 1 4 4v5.5"/></svg></span></div>
+            <h3>Como contratar</h3>
+            <p>Projeto fechado com escopo e prazo definidos, squad dedicado integrado ao seu time ou sustentação mensal com SLA — o modelo que fizer sentido para você.</p>
+            <div class="tags"><span>Projeto fechado</span><span>Squad dedicado</span><span>Mensal</span></div>
           </div>
         </article>
         <article class="card" data-cursor="↗">
           <div class="card-inner">
-            <div class="card-top"><span class="card-num">06</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20h18M6 16V10M11 16V5M16 16v-8M21 16v-4"/></svg></span></div>
-            <h3>Consultoria Técnica</h3>
-            <p>Análise de arquitetura, diagnóstico de performance e orientação estratégica para escolher a stack certa.</p>
-            <div class="tags"><span>Arquitetura</span><span>Performance</span><span>Stack</span></div>
+            <div class="card-top"><span class="card-num">06</span><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 20h18M6 16V10M11 16V5M16 16v-8M21 16v-4"/></svg></span></div>
+            <h3>Por que a InfoG</h3>
+            <p>Um contrato e um responsável, time sênior, transparência com demonstrações quinzenais, segurança desde o código e nenhum lock-in: código e acessos são seus.</p>
+            <div class="tags"><span>Um só parceiro</span><span>Sem lock-in</span><span>Início em 2 semanas</span></div>
           </div>
         </article>
       </div>
@@ -392,63 +447,165 @@ footer{border-top:1px solid var(--line);background:rgba(3,4,9,.9);padding:64px 0
 
   <!-- STACK MARQUEE -->
   <section class="stack" aria-label="Tecnologias">
-    <div class="mq-row" data-dir="-1"><div class="mq-in"><span>Angular</span><span>Node.js</span><span>TypeScript</span><span>JavaScript</span><span>Delphi</span><span>Dart / Flutter</span><span>Python</span></div></div>
-    <div class="mq-row outline" data-dir="1"><div class="mq-in"><span>SQL Server</span><span>PostgreSQL</span><span>MySQL</span><span>ADVPL</span><span>Protheus</span><span>Java</span><span>Git</span></div></div>
+    <div class="mq-row" data-dir="-1"><div class="mq-in"><span>Node.js</span><span>.NET</span><span>Java</span><span>Python</span><span>React</span><span>Angular</span><span>Flutter</span><span>React Native</span></div></div>
+    <div class="mq-row outline" data-dir="1"><div class="mq-in"><span>PostgreSQL</span><span>SQL Server</span><span>pfSense</span><span>FortiGate</span><span>Linux</span><span>AWS</span><span>Azure</span><span>Zabbix</span></div></div>
   </section>
 
-  <!-- JOURNEY -->
-  <section class="journey" id="experiencia" data-section="TRAJETÓRIA">
+  <!-- PROCESSO -->
+  <section class="journey" id="processo" data-section="COMO FUNCIONA">
     <div class="j-rail" aria-hidden="true"><span></span></div>
     <div class="j-track">
       <div class="j-panel intro">
-        <div class="eyebrow" data-scramble>Trajetória</div>
-        <h2 class="h2">Cinco anos de código, <span class="soft">aprendizado contínuo e entregas que geram valor real.</span></h2>
+        <div class="eyebrow" data-scramble>Como funciona</div>
+        <h2 class="h2">Da avaliação à operação, <span class="soft">sem parar a sua empresa.</span></h2>
       </div>
       <div class="j-panel">
-        <div class="j-year" data-y="2021">2021</div>
-        <h3>Desenvolvedor Jr — SBC Soft</h3>
-        <p>Início na SBC Soft, em São Bernardo do Campo: sistemas cross-platform com Delphi/Pascal, bancos SQL Server e publicação de apps na Google Play e na App Store.</p>
-        <span class="mono">// jan 2021 — dez 2024 · delphi · pascal · sql server</span>
+        <div class="j-year" data-y="01">01</div>
+        <h3>Diagnóstico e inventário</h3>
+        <p>Mapeamos sistemas, apps, servidores, acessos e vulnerabilidades. Você recebe um relatório com os riscos e as prioridades.</p>
+        <span class="mono">// diagnóstico gratuito · relatório em até 5 dias úteis</span>
       </div>
       <div class="j-panel">
-        <div class="j-year" data-y="2023">2023</div>
-        <h3>Engenharia de Software — UMC</h3>
-        <p>Início do bacharelado em Engenharia de Software na Universidade de Mogi das Cruzes, unindo base acadêmica à prática diária no mercado.</p>
-        <span class="mono">// bacharelado · conclusão prevista dez 2026</span>
+        <div class="j-year" data-y="02">02</div>
+        <h3>Proposta e arquitetura</h3>
+        <p>Escopo, prazos, time e a arquitetura ideal para o seu porte — seja um sistema novo, um app ou a migração para a nuvem.</p>
+        <span class="mono">// roadmap · arquitetura · contrato único</span>
       </div>
       <div class="j-panel">
-        <div class="j-year" data-y="2025">2025</div>
-        <h3>Desenvolvedor Pleno — HM Soluções</h3>
-        <p>Atuação full stack em São Paulo: front-end com Angular e TypeScript, APIs com Node.js e dados em SQL Server, em times ágeis e ambientes corporativos.</p>
-        <span class="mono">// abr 2025 — abr 2026 · angular · node.js · sql server</span>
+        <div class="j-year" data-y="03">03</div>
+        <h3>Execução sem paradas</h3>
+        <p>Desenvolvimento em sprints com entregas contínuas e mudanças de infraestrutura em janelas noturnas, sempre com plano de retorno.</p>
+        <span class="mono">// sprints · demonstrações quinzenais</span>
       </div>
       <div class="j-panel">
-        <div class="j-year" data-y="2026">2026</div>
-        <h3>InfoG</h3>
-        <p>Consolidação da InfoG para entregar engenharia de software sob medida a empresas que valorizam solidez e resultado.</p>
-        <span class="mono">// engenharia sob medida</span>
+        <div class="j-year" data-y="04">04</div>
+        <h3>Gestão contínua</h3>
+        <p>Manutenção com SLA, monitoramento 24/7 e relatório mensal de segurança e evolução: o sistema não fica órfão depois do go-live.</p>
+        <span class="mono">// sla · noc 24/7 · relatório mensal</span>
       </div>
       <div class="j-end" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CASES -->
+  <section class="services cases" id="cases" data-section="CASES">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow reveal" data-scramble>Resultados</div>
+          <h2 class="h2 reveal">Um resultado <span class="soft">em cada frente.</span></h2>
+        </div>
+        <span class="mono reveal">/ cases_ilustrativos</span>
+      </div>
+      <div class="cards cards--4">
+        <article class="card" data-cursor="↗"><div class="card-inner">
+          <span class="card-num">DESENVOLVIMENTO · INDÚSTRIA</span>
+          <p class="case-metric">−35%</p>
+          <h3>no tempo de apontamento</h3>
+          <p>Sistema de chão de fábrica integrado às máquinas e ao ERP, com painéis em tempo real.</p>
+        </div></article>
+        <article class="card" data-cursor="↗"><div class="card-inner">
+          <span class="card-num">MANUTENÇÃO · DISTRIBUIDORA</span>
+          <p class="case-metric">98%</p>
+          <h3>dos chamados dentro do SLA</h3>
+          <p>Sistema legado assumido de outro fornecedor, documentado e estabilizado em seis semanas.</p>
+        </div></article>
+        <article class="card" data-cursor="↗"><div class="card-inner">
+          <span class="card-num">SERVIDORES E FIREWALL · CLÍNICAS</span>
+          <p class="case-metric">0</p>
+          <h3>dados perdidos em um ataque</h3>
+          <p>Ransomware contido em 40 minutos graças ao backup imutável e ao firewall gerenciado.</p>
+        </div></article>
+        <article class="card" data-cursor="↗"><div class="card-inner">
+          <span class="card-num">APLICATIVO · VAREJO</span>
+          <p class="case-metric">+27%</p>
+          <h3>de recompra pelo app</h3>
+          <p>App de pedidos e fidelidade integrado ao ERP e hospedado na mesma estrutura monitorada.</p>
+        </div></article>
+      </div>
+      <div class="voices">
+        <figure class="voice reveal">
+          <blockquote><p>“Antes tínhamos quatro fornecedores de tecnologia e nenhum responsável. Com a InfoG, temos um único time que resolve — do servidor ao aplicativo.”</p></blockquote>
+          <figcaption><strong>Cláudio Mendes</strong> CTO · Rede Bom Preço</figcaption>
+        </figure>
+        <figure class="voice reveal">
+          <blockquote><p>“Em uma madrugada de domingo o firewall bloqueou um ataque, e o plantão da InfoG já tinha agido antes de chegarmos ao escritório.”</p></blockquote>
+          <figcaption><strong>Eduardo Ramos</strong> Gerente de TI · Metalúrgica Santa Rita</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" data-section="DÚVIDAS">
+    <div class="wrap faq-grid">
+      <div>
+        <div class="eyebrow reveal" data-scramble>Dúvidas</div>
+        <h2 class="h2 reveal">Perguntas <span class="soft">frequentes.</span></h2>
+      </div>
+      <div class="faq-list">
+        <details><summary>Posso contratar só um dos serviços?</summary><p>Sim. Muitos clientes começam por uma frente — um sistema, um app ou a manutenção — e ampliam depois. Com tudo no mesmo time, a integração fica mais simples.</p></details>
+        <details><summary>Vocês assumem sistemas feitos por outra empresa?</summary><p>Sim. Fazemos um diagnóstico do código e da infraestrutura, documentamos o que existe e montamos um plano de estabilização antes de evoluir o sistema.</p></details>
+        <details><summary>Cuidam dos servidores e do firewall que já temos?</summary><p>Sim. Avaliamos o ambiente atual, aproveitamos o que estiver em bom estado e assumimos a gestão com monitoramento 24/7, atualizações e backup testado.</p></details>
+        <details><summary>O aplicativo fica no nome da minha empresa?</summary><p>Sim. O app é publicado na conta da sua empresa na App Store e no Google Play, e o código-fonte, a documentação e os acessos são sempre seus.</p></details>
+        <details><summary>Como funciona o atendimento em caso de incidente?</summary><p>O plantão funciona 24/7. Incidentes críticos têm resposta em até 15 minutos, com acompanhamento até a normalização e relatório do que aconteceu.</p></details>
+        <details><summary>Em quanto tempo vocês começam?</summary><p>O diagnóstico é agendado em poucos dias e os squads começam em até duas semanas após a assinatura.</p></details>
+        <details><summary>Vocês atendem empresas de todo o Brasil?</summary><p>Sim. Trabalhamos de forma remota com empresas de todo o país e fazemos visitas presenciais quando o projeto exige.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
   <section class="cta" id="contato" data-section="CONTATO">
     <div class="wrap">
       <div class="eyebrow reveal" style="justify-content:center" data-scramble>Próximo projeto</div>
       <h2 class="cta-title">Vamos construir<br><span class="grad-t">algo sólido?</span></h2>
-      <p class="reveal">Engenharia de software sob medida para empresas que precisam de soluções robustas, escaláveis e entregues com rigor técnico.</p>
-      <div class="hero-ctas reveal">
-        <a class="btn primary magnetic" data-cursor="WHATS" href="https://wa.me/5511970803077?text=Ol%C3%A1!%20Vi%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">
-          <span>Solicitar orçamento</span>
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="btn ghost magnetic" data-cursor="EMAIL" href="mailto:contato@infog.com.br"><span>Enviar e-mail</span></a>
-      </div>
+      <p class="reveal">Conte o que você precisa. Um especialista responde em até 1 dia útil com os próximos passos.</p>
+
+      <form class="lead" id="form-orcamento" method="post" data-lead-form data-wa-intro="Olá! Pedi um orçamento pelo site da InfoG.">
+        <div class="lead-grid">
+          <div class="field">
+            <label for="o-nome">Nome *</label>
+            <input id="o-nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="o-email">E-mail corporativo *</label>
+            <input id="o-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="o-whats">WhatsApp *</label>
+            <input id="o-whats" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 90000-0000" data-mask="phone" required>
+          </div>
+          <div class="field">
+            <label for="o-servico">Serviço de interesse *</label>
+            <select id="o-servico" name="servico" required>
+              <option value="">Selecione</option>
+              <option>Desenvolvimento de sistemas</option>
+              <option>Manutenção de sistemas</option>
+              <option>Servidores e firewall</option>
+              <option>Aplicativo iOS e Android</option>
+              <option>Mais de um serviço</option>
+            </select>
+          </div>
+          <div class="field field--wide">
+            <label for="o-msg">Conte em poucas palavras (opcional)</label>
+            <textarea id="o-msg" name="mensagem" rows="3"></textarea>
+          </div>
+        </div>
+        <button class="btn primary magnetic" type="submit"><span>Solicitar orçamento</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="lead-note">Seus dados são usados apenas para responder ao contato, conforme a LGPD.</p>
+        <div class="lead-success" data-form-success hidden>
+          <span class="mono">// status: recebido</span>
+          <h3>Pedido recebido<span data-success-name></span>!</h3>
+          <p>Um especialista vai responder em até 1 dia útil. Se preferir, continue a conversa agora pelo WhatsApp.</p>
+          <a class="btn primary" href="https://wa.me/5511970803077" target="_blank" rel="noopener" data-success-whatsapp><span>Continuar no WhatsApp</span></a>
+        </div>
+      </form>
+
       <div class="contact-strip reveal">
         <a href="mailto:contato@infog.com.br"><span class="k">E-MAIL</span><span class="v">contato@infog.com.br</span></a>
-        <a href="https://wa.me/5511970803077" target="_blank" rel="noopener"><span class="k">WHATSAPP</span><span class="v">(11) 9 7080-3077</span></a>
-        <a href="https://github.com/pedroemerich" target="_blank" rel="noopener"><span class="k">GITHUB</span><span class="v">@pedroemerich</span></a>
+        <a href="https://wa.me/5511970803077?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20InfoG%20e%20quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener"><span class="k">WHATSAPP</span><span class="v">(11) 97080-3077</span></a>
+        <a href="#processo"><span class="k">ATENDIMENTO</span><span class="v">Todo o Brasil · NOC 24/7</span></a>
       </div>
     </div>
   </section>
@@ -459,22 +616,23 @@ footer{border-top:1px solid var(--line);background:rgba(3,4,9,.9);padding:64px 0
     <div class="f-grid">
       <div>
         <a href="#top" class="logo"><img class="logo-img" src="../../assets/shared/logo-g-dark.png" alt="" width="41" height="34"><span>Info<em>G</em></span></a>
-        <p>Por Pedro Augusto Torres Emerich, 21 anos — desenvolvedor com 5 anos de experiência prática e graduando em Engenharia de Software.</p>
+        <p>Desenvolvimento de sistemas e aplicativos, manutenção com SLA e servidores e firewall gerenciados 24/7 — um único time responsável.</p>
       </div>
       <div>
         <h4>CONTATO</h4>
-        <ul><li><a href="mailto:contato@infog.com.br">contato@infog.com.br</a></li><li><a href="https://wa.me/5511970803077" target="_blank" rel="noopener">(11) 9 7080-3077</a></li></ul>
+        <ul><li><a href="mailto:contato@infog.com.br">contato@infog.com.br</a></li><li><a href="https://wa.me/5511970803077" target="_blank" rel="noopener">(11) 97080-3077</a></li></ul>
       </div>
       <div>
-        <h4>REDES</h4>
-        <ul><li><a href="curriculo-pedro-emerich.pdf" target="_blank" rel="noopener">Currículo ↗</a></li><li><a href="https://linkedin.com/in/pedroemerich" target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href="https://github.com/pedroemerich" target="_blank" rel="noopener">GitHub ↗</a></li></ul>
+        <h4>NAVEGAÇÃO</h4>
+        <ul><li><a href="#servicos">Serviços</a></li><li><a href="#processo">Como funciona</a></li><li><a href="#cases">Cases</a></li><li><a href="#faq">Dúvidas</a></li></ul>
       </div>
     </div>
     <div class="f-big" aria-hidden="true">INFOG</div>
-    <div class="f-bottom"><span>© 2026 INFOG — BUILD_VERSION_2.0.0</span><span>SÃO BERNARDO DO CAMPO, SP — BRASIL</span></div>
+    <div class="f-bottom"><span>© 2026 INFOG — DEMONSTRAÇÃO: NÚMEROS, CASES E DEPOIMENTOS ILUSTRATIVOS</span><a href="../../index.html">← VOLTAR AO CATÁLOGO</a></div>
   </div>
 </footer>
 
+<script src="../../assets/shared/lp.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -710,7 +868,7 @@ scene.add(stars);
 const keys = [
   { sel: '#top',        at: () => 0,                 m: 0, x: 2.4, y: 0.1, s: 1.0,  o: 1.0,  rx: 0.0 },
   { sel: '#servicos',   at: el => el.top - innerHeight * 0.35, m: 1, x: 0, y: -0.9, s: 1.0, o: 0.55, rx: 0.55 },
-  { sel: '#experiencia',at: el => el.top,            m: 2, x: 0, y: -0.2, s: 1.0, o: 0.85, rx: 1.15 },
+  { sel: '#processo',   at: el => el.top,            m: 2, x: 0, y: -0.2, s: 1.0, o: 0.85, rx: 1.15 },
   { sel: '#contato',    at: el => el.top - innerHeight * 0.25, m: 3, x: 0, y: 0.2, s: 1.25, o: 0.7, rx: 0.0 },
 ];
 function computeKeys() {
