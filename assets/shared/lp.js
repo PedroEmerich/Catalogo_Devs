@@ -473,35 +473,6 @@
     update();
   });
 
-  /* Simulador de prazo (data-estimator) ---------------------------------- */
-
-  $$('[data-estimator]').forEach((estimator) => {
-    const base = Number(estimator.dataset.baseWeeks || 0);
-    const minOut = estimator.querySelector('[data-estimate-min]');
-    const maxOut = estimator.querySelector('[data-estimate-max]');
-    const cta = estimator.querySelector('[data-estimate-cta]');
-
-    const update = () => {
-      const chosen = $$('input:checked', estimator);
-      const min = chosen.reduce((sum, input) => sum + Number(input.dataset.weeks || 0), base);
-      const max = Math.ceil(min * 1.3);
-      minOut.textContent = min;
-      maxOut.textContent = max;
-      if (cta) {
-        // Uma linha por grupo do simulador, usando a legenda do grupo como rótulo.
-        const groups = $$('fieldset', estimator).map((group) => {
-          const legend = group.querySelector('legend')?.textContent.trim() || 'Opções';
-          const values = $$('input:checked', group).map((input) => input.value);
-          return `${legend}: ${values.join(', ') || 'nenhuma opção marcada'}`;
-        });
-        const text = [`Fiz a simulação no site: de ${min} a ${max} semanas.`, ...groups].join('\n');
-        cta.dataset.prefill = new URLSearchParams({ mensagem: text }).toString();
-      }
-    };
-    estimator.addEventListener('change', update);
-    update();
-  });
-
   /* Ano atual no rodapé --------------------------------------------------- */
 
   $$('[data-year]').forEach((el) => {

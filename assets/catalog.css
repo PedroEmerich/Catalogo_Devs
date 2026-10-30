@@ -206,7 +206,7 @@ code {
   align-items: center;
 }
 
-/* Leque com as cinco prévias ao lado do título (só em telas largas). */
+/* Leque com as duas prévias ao lado do título (só em telas largas). */
 .stack {
   display: none;
 }
@@ -230,11 +230,8 @@ code {
     box-shadow: 0 30px 50px -28px rgba(0, 0, 0, 0.45);
   }
 
-  .stack img:nth-child(1) { top: 0; left: 0; rotate: -7deg; }
-  .stack img:nth-child(2) { top: 45px; left: 6%; rotate: -3.5deg; }
-  .stack img:nth-child(3) { top: 90px; left: 12%; rotate: 0deg; }
-  .stack img:nth-child(4) { top: 135px; left: 18%; rotate: 3.5deg; }
-  .stack img:nth-child(5) { top: 180px; left: 24%; rotate: 7deg; }
+  .stack img:nth-child(1) { top: 20px; left: 0; rotate: -5deg; }
+  .stack img:nth-child(2) { top: 130px; left: 22%; rotate: 4deg; }
 }
 
 .fronts li {
@@ -270,29 +267,11 @@ code {
   box-shadow: var(--shadow);
 }
 
-.lp-card--prumo {
-  --brand: #c2410c;
-  --brand-text: #9a3412;
-  --brand-soft: #f3e4d6;
-}
-
-.lp-card--zelo {
-  --brand: #0f766e;
-  --brand-text: #0f766e;
-  --brand-soft: #d9efe9;
-}
-
 .lp-card--bastiao {
   --brand: #070b14;
   --brand-ink: #34d399;
   --brand-text: #047857;
   --brand-soft: #0f1829;
-}
-
-.lp-card--toque {
-  --brand: #6d28d9;
-  --brand-text: #6d28d9;
-  --brand-soft: #efe4ff;
 }
 
 .lp-card--vetor {
@@ -302,27 +281,11 @@ code {
 }
 
 @media (prefers-color-scheme: dark) {
-  .lp-card--prumo {
-    --brand-text: #f4a27a;
-    --brand-soft: #3a2418;
-  }
-
-  .lp-card--zelo {
-    --brand-text: #5eead4;
-    --brand-soft: #10302c;
-  }
-
   .lp-card--bastiao {
     --brand: #34d399;
     --brand-ink: #04271a;
     --brand-text: #34d399;
     --brand-soft: #0b1220;
-  }
-
-  .lp-card--toque {
-    --brand: #7c3aed;
-    --brand-text: #c4b5fd;
-    --brand-soft: #2a1a47;
   }
 
   .lp-card--vetor {

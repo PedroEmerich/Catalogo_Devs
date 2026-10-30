@@ -10,7 +10,7 @@ const { chromium } = require('playwright');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'assets', 'previews');
-const PAGES = ['prumo', 'zelo', 'bastiao', 'toque', 'vetor'];
+const PAGES = ['bastiao', 'vetor'];
 const SHOTS = [
   { name: 'desktop', viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 / 3 }, // 960 × 600
   { name: 'mobile', viewport: { width: 390, height: 844 }, deviceScaleFactor: 0.75 }, // 293 × 633

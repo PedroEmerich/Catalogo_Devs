@@ -1,16 +1,13 @@
 # Catálogo Devs
 
-Catálogo com **5 landing pages** para empresas de desenvolvimento de software, pensadas para campanhas de Google Ads.
+Catálogo com **2 landing pages** para empresas de desenvolvimento de software, pensadas para campanhas de Google Ads.
 
-**Todas as páginas trazem as quatro frentes completas — desenvolvimento, manutenção, servidores e firewall e aplicativos — com o mesmo peso:** descrição, entregas, botão de orçamento que já seleciona o serviço no formulário e respostas no FAQ para cada uma. Nenhuma página é dedicada a um serviço só; o que muda entre elas é a identidade visual, o tom e os recursos de conversão.
+**As duas páginas trazem as quatro frentes completas — desenvolvimento, manutenção, servidores e firewall e aplicativos — com o mesmo peso:** descrição, entregas, botão de orçamento que já seleciona o serviço no formulário e respostas no FAQ para cada uma. Nenhuma página é dedicada a um serviço só; o que muda entre elas é a identidade visual, o tom e os recursos de conversão.
 
 | # | Modelo | Estilo | Destaques | Visual |
 |---|--------|--------|-----------|--------|
-| 01 | [Prumo Software](landing-pages/prumo/index.html) | Editorial e consultiva | Formulário no topo, as quatro frentes em cartões, método em 5 etapas e case que reúne todos os serviços | Creme, grafite e terracota · Fraunces + Inter |
-| 02 | [Zelo Tecnologia](landing-pages/zelo/index.html) | Confiável e acolhedora | Painel do cliente no hero, sinais de alerta por frente, planos mensais que preenchem o formulário e comparativo | Verde-petróleo, cantos arredondados · Plus Jakarta Sans |
-| 03 | [Bastião Tecnologia & Segurança](landing-pages/bastiao/index.html) | Técnica e escura | Terminal animado, autodiagnóstico com sinais das quatro frentes e diagrama de como tudo se conecta | Escuro técnico, verde terminal · Space Grotesk + IBM Plex + JetBrains Mono |
-| 04 | [Toque Digital](landing-pages/toque/index.html) | Vibrante e visual | Painel web e app no hero, simulador de prazo do projeto, linha do tempo e um case por frente | Gradiente violeta → rosa · Sora + DM Sans |
-| 05 | [Vetor Software House](landing-pages/vetor/index.html) | Suíça e assertiva | Orçamento em 3 etapas no hero, serviços em abas, modelos de contratação e números em destaque | Suíço/brutalista, azul elétrico e lima · Archivo |
+| 01 | [Bastião Tecnologia & Segurança](landing-pages/bastiao/index.html) | Técnica e escura | Terminal animado, autodiagnóstico com sinais das quatro frentes e diagrama de como tudo se conecta | Escuro técnico, verde terminal · Space Grotesk + IBM Plex + JetBrains Mono |
+| 02 | [Vetor Software House](landing-pages/vetor/index.html) | Suíça e assertiva | Orçamento em 3 etapas no hero, serviços em abas, modelos de contratação e números em destaque | Suíço/brutalista, azul elétrico e lima · Archivo |
 
 A página inicial ([`index.html`](index.html)) é a vitrine: mostra as prévias, as características de cada modelo e permite ver cada página em desktop, tablet e celular sem sair do catálogo.
 
@@ -41,7 +38,7 @@ assets/
     base.css                reset, utilidades e estados comuns
     lp.js                   comportamentos compartilhados (formulários, abas, simuladores…)
 landing-pages/
-  prumo/   zelo/   bastiao/   toque/   vetor/
+  bastiao/   vetor/
     index.html              conteúdo da página
     style.css               identidade visual (variáveis no topo)
 scripts/capturar-previews.js  regenera as imagens de assets/previews
@@ -82,7 +79,6 @@ scripts/capturar-previews.js  regenera as imagens de assets/previews
 | `data-prefill="campo=valor"` | links e botões | Preenche um campo do formulário antes de rolar até ele (serviço escolhido, plano). |
 | `data-tabs` | contêiner de abas | Abas acessíveis (`role="tab"`/`tabpanel`) com setas, Home e End. |
 | `data-risk` | autodiagnóstico | Soma os pesos (`data-weight`) das caixas marcadas, mostra o nível (`data-risk-level`) e prepara a mensagem do formulário. |
-| `data-estimator` | simulador | Soma semanas (`data-weeks`) ao prazo base (`data-base-weeks`) e prepara a mensagem do formulário. |
 | `data-count` | números | Contagem animada ao aparecer na tela (`data-prefix`, `data-suffix`, `data-decimals`). |
 | `data-reveal` | qualquer bloco | Revelação suave ao rolar (`style="--delay: .1s"` para escalonar). |
 | `data-js-only` / `data-no-js` | qualquer elemento | Mostra só com JavaScript ativo / só sem JavaScript. |
